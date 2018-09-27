@@ -2,7 +2,7 @@ create database  ConquistadoresBD
 go
 use ConquistadoresBD
 go
- 
+
 create table club(
 
 	id int identity, 
@@ -70,6 +70,15 @@ create table Ocupacion(
 )
 alter table Ocupacion
 add constraint PK_Ocupacion primary key(ID)
+
+create table Reunion(
+	ID int identity,
+	Fecha date not null
+)
+alter table Reunion
+add constraint PK_Reunion primary key (ID)
+	
+select * from Reunion
 
 --------Empieza las tablas que dependen
 create table unidad(

@@ -24,6 +24,34 @@ go
  insert into Club (nombre,calle,colonia,codigo_postal,logo_tipo)
  values('Snow club','Rotonda','El barrio','60249','Un mono de nieve')
  select * from Club
+ ---------------------LLENADO LA TABLA REUNION------------------------------
+select * from Reunion
+insert into Reunion(Fecha)
+values ('11-1-2017')
+insert into Reunion(Fecha)
+values ('12/1/2017')
+insert into Reunion(Fecha)
+values ('1/1/2018')
+insert into Reunion(Fecha)
+values ('2/1/2018')
+insert into Reunion(Fecha)
+values ('3/1/2018')
+insert into Reunion(Fecha)
+values ('4/1/2018')
+insert into Reunion(Fecha)
+values ('5/1/2018')
+insert into Reunion(Fecha)
+values ('6/1/2018')
+insert into Reunion(Fecha)
+values ('7/1/2018')
+insert into Reunion(Fecha)
+values ('8/5/2018')
+insert into Reunion(Fecha)
+values ('9/1/2018')
+insert into Reunion(Fecha)
+values ('9/20/2018')
+
+
 
  ---------------------LLENANDO LA TABLA CAMPAMENTO------------------------
  --select * from campamento
@@ -73,7 +101,7 @@ go
  select * from campamento
 
  --------------------LLENANDO LA TABLA ESPECIALIDAD-----------------------
---select * from especialidad
+--select * from especialidad ESTA TODAVIA NO
  insert into especialidad(nombre,descrip)
  values('Atleta','Dominio en el deporte')
  insert into especialidad(nombre,descrip)
@@ -109,7 +137,7 @@ go
  select * from tipoEmpleado
 
 --------------------------LLENANDO LA TABLA CLASE------------------------------
---select * from clase
+--select * from clase ESTA TODAVÍA NO 
  insert into clase(nombre,color)
  values('A','Rojo')
  insert into clase(nombre,color)
@@ -134,7 +162,7 @@ go
  select * from clase
  
  ------------------------LLENANDO LA TABLA ACTIVIDAD---------------------------
- --select * from actividad
+ --select * from actividad ESTA TODAVÍA NO
  insert into actividad(nombre,descrip)
  values('Defensa personal','Conjunto de habilidades técnico-tácticas encaminadas a impedir o repeler? una agresión')
  insert into actividad(nombre,descrip)
@@ -789,6 +817,54 @@ insert into persona(nombre,sexo) --PADRE
 
  select * from persona
 
+
+
+ ----------------------Llenado Ocupación----------------------------------------
+ insert into  Ocupacion(Nombre)
+ values ('Desarrollador') --1--
+ insert into  Ocupacion(Nombre)
+ values ('Desempleado') --2--
+  insert into  Ocupacion(Nombre)
+ values ('Ama de casa') --3--
+  insert into  Ocupacion(Nombre)
+ values ('Administrador') --4--
+  insert into  Ocupacion(Nombre)
+ values ('Contador') --5--
+  insert into  Ocupacion(Nombre)
+ values ('Gerente') --6--
+  insert into  Ocupacion(Nombre)
+ values ('Maestro') --7--
+  insert into  Ocupacion(Nombre)
+ values ('Recepcionista') --8--
+  insert into  Ocupacion(Nombre)
+ values ('Mecanico') --9--
+  insert into  Ocupacion(Nombre)
+ values ('Biologo') --10--
+
+  insert into  Ocupacion(Nombre)
+ values ('Médico Veterinario') --11--
+  insert into  Ocupacion(Nombre)
+ values ('Médico general') --12--
+  insert into  Ocupacion(Nombre)
+ values ('Enfermería') --13--
+  insert into  Ocupacion(Nombre)
+ values ('Técnico en informática') --14--
+  insert into  Ocupacion(Nombre)
+ values ('Chef') --15--
+  insert into  Ocupacion(Nombre)
+ values ('Diseño gráfico') --16--
+  insert into  Ocupacion(Nombre)
+ values ('Ilustrador') --17--
+  insert into  Ocupacion(Nombre)
+ values ('Músico') --18--
+  insert into  Ocupacion(Nombre)
+ values ('Cajero') --19--
+  insert into  Ocupacion(Nombre)
+ values ('Otro') --20--
+
+
+
+ select * from Ocupacion
  ------------------------LLENANDO LA TABLA ALERGIA---------------------------
  --select * from alergia
  insert into alergia(descrip)
