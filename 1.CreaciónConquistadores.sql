@@ -2,7 +2,7 @@ create database  ConquistadoresBD
 go
 use ConquistadoresBD
 go
-
+ 
 create table club(
 
 	id int identity, 
@@ -23,22 +23,17 @@ create table campamento(
 	constraint PK_campamento primary key(id)
 )
 
-create table especialidad (
-	id int identity,
-	nombre nvarchar (80) not null, 
-	descrip text
-	constraint PK_especialidad primary key(id)
-)
 create table tipoEmpleado(
 	id int identity,
 	nombre nvarchar (80) not null,
 	constraint PK_tipoEmpleado primary key(id)
 )
 
-create table clase(
+create table clase(            -----MODIFICADA
 	id int identity,
 	nombre nvarchar(80) not null, 
 	color varchar (20) not null, 
+	Rango_Edad int, 
 	constraint PK_clase primary key (id)
 )
 
@@ -46,14 +41,12 @@ create table clase(
 create table actividad(
 	id int identity,
 	nombre nvarchar (80) not null, 
-	descrip text,
 	constraint PK_actividad primary key (id)
 )
 
-create table persona(
+create table persona(                  ------MODIFICADA          
 	id int identity,
 	nombre nvarchar(100) not null,
-	fecha_nacimiento date, 
 	sexo bit not null,
 	constraint PK_persona primary key(id)
 )
@@ -70,15 +63,6 @@ create table Ocupacion(
 )
 alter table Ocupacion
 add constraint PK_Ocupacion primary key(ID)
-
-create table Reunion(
-	ID int identity,
-	Fecha date not null
-)
-alter table Reunion
-add constraint PK_Reunion primary key (ID)
-	
-select * from Reunion
 
 --------Empieza las tablas que dependen
 create table unidad(
@@ -112,23 +96,24 @@ create  table claseActividad(
 	constraint FK_actividad_claseActividad foreign key (actividad_id) references actividad(id)
 )
 
-create table requisito(
+
+create table especialidad (  ------MODIFICADA     
+	id int identity,
+	nombre nvarchar (80) not null, 
+	descrip text,
+	clase_id int not null
+	constraint PK_especialidad primary key(id)
+)
+alter table especialidad
+add constraint FK_Especialidad_Clase foreign key (clase_id) references clase(id)
+
+create table EspecialidadActividad(         
 	especialidad_id int not null,
 	actividad_id int not null,
-	constraint FK_especialidad_requisito foreign key (especialidad_id) references especialidad(id),
-	constraint FK_actividad_requisito foreign key (actividad_id) references actividad(id)
+	constraint FK_EspecialidadActividad_Especialidad foreign key (especialidad_id) references especialidad(id),
+	constraint FK_EspecialidadActividad_Actividad foreign key (actividad_id) references actividad(id)
 )
 
-create table ClaseEspecialidad(
-	clase_id int not null,
-	especialidad_id int not null
-)
-
-alter table ClaseEspecialidad
-add constraint FK_ClaseEspecialidad_ClaseID foreign key (clase_id) references clase(id)
-
-alter table ClaseEspecialidad
-add constraint FK_ClaseEspecialidad_EspecialidadID foreign key (especialidad_id) references especialidad(id)
 
 create table padre(
 	padre_id int,
@@ -145,11 +130,15 @@ create table telefonoPadre(
 	constraint FK_telefono_padre foreign key (padre_id) references padre (padre_id)
 )
                       
-create table nino(                                        
+create table nino(                                 
 	nino_id int, 
-	estatura decimal (3,2) not null,
-	peso decimal (3,2) not null,
+	unidad_id int not null,
+	estatura tinyint  not null,
+	peso tinyint not null,
 	padre_id int,
+	fecha_nacimiento date not null, 
+	clase_id int not null,
+	constraint PK_Unidad_nino foreign key (unidad_id) references unidad(id),
 	constraint FK_persona_nino foreign key (nino_id) references persona (id),
 	constraint FK_padre_nino foreign key (padre_id) references padre(padre_id),
 	constraint PK_nino primary key (nino_id)
@@ -165,22 +154,39 @@ create table alergiaNino(
 create table ninoActividad(
 	actividad_id int not null,
 	nino_id int not null,
+	fecha_realizacion date
 	constraint FK_actividad_ninoActividad foreign key (actividad_id) references actividad(id),
 	constraint FK_nino_ninoActividad foreign key (nino_id) references nino (nino_id)
 )
 
-create table ninoClase(
+create table Reunion(
+	ID int identity,
+	Fecha date not null
+)
+alter table Reunion 
+add constraint PK_ReunionID primary key (ID)
+
+create table Pulcritud(
+	ID tinyint identity,
+	Nombre varchar(10) not null
+)
+alter table Pulcritud
+add constraint PK_PulcritudID primary key (ID)
+
+create table ReunionNino(
+	
 	nino_id int not null,
-	clase_id int not null,
+	reunion_id int not null,
 	puntualidad bit,
-	pulcritud bit,
+	pulcritud_id tinyint,
 	tarea bit, 
 	asitencia bit,
-	constraint FK_nino_ninoClase foreign key (nino_id) references nino (nino_id),
-	constraint FK_clase_ninoClase foreign key (clase_id) references clase (id)
+	constraint FK_ReunionNino_nino foreign key (nino_id) references nino (nino_id),
+	constraint FK_ReunionNinoID foreign key (reunion_id) references Reunion(ID),
+	constraint FK_PulcritudIDn foreign key (pulcritud_id) references Pulcritud (ID)
 )
 
-create table trabajador (
+create table trabajador(
 	trabajador_id int,
 	fechaInicio date,
 	estatus bit not null,
