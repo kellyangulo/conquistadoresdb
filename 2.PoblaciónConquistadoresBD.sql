@@ -291,608 +291,608 @@ insert into campamento(nombre,fecha,calle,colonia)
 ------------------------LLENANDO LA TABLA PERSONA---------------------------
  --select * from persona where id > 100
  --        FEMENINO 1, MASCULINO 0
- insert into persona(nombre,sexo) --EMPLEADO
- values('Andres Cuadras Ramos',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Alicia Perez Ramirez',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Fernando Ramos Cuadras',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Sofia Gerardo Valenzuela',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Maria Garcia Beltrán',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Martha Doño Rivera',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Cristina Valenzuela Lopez',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Jaime Felix Gutierrez',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Rocio Barajas Castañeda',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Ramon Salcedo Lopez',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Alex Montaño Cazas',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Arturo Muños Ortiz',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Benjamin Parra Angulo',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Daniel Ortega Ibarra',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Ana Lazcano Perez',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Erika Abitia Torres',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Frida Angulo Vizcarra',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Gabriel Valenzula Rojo',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Gustavo Navarro Medina',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Janeth Flores Bustillo',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Ilse Zavala Valenzuela',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Lucero Apodaca Castro',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Luis Lopez Canales',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Adriana Valenzuela Valenzuela',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Osvaldo Leal Rendon',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Esther Wong Saille',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Joel Sarabia Tamayo',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Evelia Sanchez Rivera',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Antonio Zuñiga Lozano',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Brandon Osuna Neyoy',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Etccel Vizcarra Medina',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Sebastian Beltrán Quiroz',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Julia Quiroz Corrales',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Rubi Hernandez Mora',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Esmeralda Venegas Sudiel',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Pablo Vega Camacho',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Antony Ramirez Ramirez',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Karime Esavala Peña',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Samantha Trujillo Rey',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Esmeralda Beltrán Renteria',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Mariana Figuero Alcoser',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Gris Verduzo Sanchez',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Charly Gonzalez Medina',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Abram Soto Agulo',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Susano Norzagaray Feliz',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Miguel Carranza Doriel',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Valeria Jimenez Santos',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Susan Saenz Clutier',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Karla Peña Angulo',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Mateo Mileno Turrieldez',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Daniel Ballis Alcazar',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Tania Quiñonez Morales',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Joceline Manjarrez Cazares',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Julieta Zalzar Reyes',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Yahir Nuñez Payan',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Octavio Fuentes Roman',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Armando Ambriz Rendon',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Manuel Sandoval Lopez',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Pedro Chavez Chavez',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Ambar Georged Juarez',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Mariana Romero Vazques',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Beren Sat Diblasino',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Mariana Nolasco Hernandez',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Valentina Vales Uriarte',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Roberto Ramos Felips',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Jorge Rubio Pimienta',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Cristhian Villa Costa',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Uriel Ramirez Mendoza',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Abdiel Cervantes Casilla',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Sandra Machado Angulo',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Dulce Valez Garcia',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Vianca Gonzalez Ponce',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Jasiel Galvez Tumpela',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Martin Quintero Bordado',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Alison Rios Castillo',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Carlo Fernandez Palacio',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Rubi Barrera Rosales',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Iskra Urias Carlos',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Dania Iridiane Vasquez',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Jose Medrano Perez',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Juan Galicia Montijo',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Felix Cordoba Lopez',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Dania Villegas Torres',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Susan Marchena Corrado',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Mara Castro Ladas',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Brandon Osiel Inzunza',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Kevin Yuided Díaz',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Facundo Serrano Ortiz',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Hugo Portillo Fortier',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Ivan Zelmal Castro',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Janice Echegerrya Prudente',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Selma Burgueño Hernandez',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Frida Echegaray Lez',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Laura Torres Luna',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Karime Inzunza Inzunza',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Joceline Bojoquez Turner',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Zara Guardado Montoya',1)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Felipe Felix Arias',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Samuel Zazueta Meza',0)
- insert into persona(nombre,sexo) --EMPLEADO
- values('Jose Luis Zamarripa Rodriguez',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Andres','Cuadras Ramos',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Alicia','Perez Ramirez',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Fernando','Ramos Cuadras',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Sofia','Gerardo Valenzuela',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Maria','Garcia Beltrán',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Martha','Doño Rivera',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Cristina','Valenzuela Lopez',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Jaime','Felix Gutierrez',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Rocio','Barajas Castañeda',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Ramon','Salcedo Lopez',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Alex','Montaño Cazas',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Arturo','Muños Ortiz',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Benjamin','Parra Angulo',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Daniel','Ortega Ibarra',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Ana','Lazcano Perez',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Erika','Abitia Torres',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Frida','Angulo Vizcarra',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Gabriel','Valenzula Rojo',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Gustavo','Navarro Medina',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Janeth','Flores Bustillo',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Ilse','Zavala Valenzuela',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Lucero','Apodaca Castro',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Luis','Lopez Canales',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Adriana','Valenzuela Valenzuela',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Osvaldo','Leal Rendon',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Esther','Wong Saille',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Joel','Sarabia Tamayo',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Evelia','Sanchez Rivera',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Antonio','Zuñiga Lozano',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Brandon','Osuna Neyoy',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Etccel','Vizcarra Medina',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Sebastian','Beltrán Quiroz',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Julia','Quiroz Corrales',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Rubi','Hernandez Mora',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Esmeralda','Venegas Sudiel',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Pablo','Vega Camacho',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Antony','Ramirez Ramirez',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Karime','Esavala Peña',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Samantha','Trujillo Rey',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Esmeralda','Beltrán Renteria',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Mariana','Figuero Alcoser',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Gris','Verduzo Sanchez',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Charly','Gonzalez Medina',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Abram','Soto Agulo',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Susano','Norzagaray Feliz',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Miguel','Carranza Doriel',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Valeria','Jimenez Santos',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Susan','Saenz Clutier',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Karla','Peña Angulo',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Mateo','Mileno Turrieldez',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Daniel','Ballis Alcazar',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Tania','Quiñonez Morales',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Joceline','Manjarrez Cazares',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Julieta','Zalzar Reyes',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Yahir','Nuñez Payan',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Octavio','Fuentes Roman',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Armando','Ambriz Rendon',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Manuel','Sandoval Lopez',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Pedro','Chavez Chavez',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Ambar','Georged Juarez',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Mariana','Romero Vazques',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Beren','Sat Diblasino',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Mariana','Nolasco Hernandez',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Valentina','Vales Uriarte',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Roberto','Ramos Felips',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Jorge','Rubio Pimienta',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Cristhian','Villa Costa',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Uriel','Ramirez Mendoza',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Abdiel','Cervantes Casilla',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Sandra','Machado Angulo',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Dulce','Valez Garcia',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Vianca','Gonzalez Ponce',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Jasiel','Galvez Tumpela',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Martin','Quintero Bordado',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Alison','Rios Castillo',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Carlo','Fernandez Palacio',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Rubi','Barrera Rosales',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Iskra','Urias Carlos',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Dania','Iridiane Vasquez',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Jose','Medrano Perez',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Juan','Galicia Montijo',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Felix','Cordoba Lopez',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Dania','Villegas Torres',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Susan','Marchena Corrado',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Mara','Castro Ladas',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Brandon','Osiel Inzunza',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Kevin','Yuided Díaz',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Facundo','Serrano Ortiz',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Hugo','Portillo Fortier',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Ivan','Zelmal Castro',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Janice','Echegerrya Prudente',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Selma','Burgueño Hernandez',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Frida','Echegaray Lez',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Laura','Torres Luna',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Karime','Inzunza Inzunza',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Joceline','Bojoquez Turner',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Zara','Guardado Montoya',1)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Felipe','Felix Arias',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Samuel','Zazueta Meza',0)
+ insert into persona(nombre,apellidos,sexo) --EMPLEADO
+ values('Jose','Luis Zamarripa Rodriguez',0)
 
- insert into persona(nombre,sexo) --PADRE
- values('Joel Hernandez Parra',0)
- insert into persona(nombre,sexo) --PADRE
- values('Magdalena Beltrán Soza',1)
- insert into persona(nombre,sexo) --PADRE
- values('Juan Felix Manjarrez',0)
- insert into persona(nombre,sexo) --PADRE
- values('Josue Lazcano Villa Real',0)
- insert into persona(nombre,sexo) --PADRE
- values('Cristina Benitez Roman',1)
- insert into persona(nombre,sexo) --PADRE
- values('Luis Quevedo Hernandez',0)
- insert into persona(nombre,sexo) --PADRE
- values('Sergio Noriega Calderon',0)
- insert into persona(nombre,sexo) --PADRE
- values('Alejandra Valenzuela Pérez',1)
- insert into persona(nombre,sexo) --PADRE
- values('Jesús Trujillo García',0)
- insert into persona(nombre,sexo) --PADRE
- values('Zulema Escobar Osuna',1)
- insert into persona(nombre,sexo) --PADRE
- values('Carolina Peralta Carrillo',1)
- insert into persona(nombre,sexo) --PADRE
- values ('Flor Lopez Martinez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Cesar Machado Gomez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Pricila Machado Zalazar',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Mikaela Zambrano Fonseca',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Julisa Gomez Fonseca',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Oliver Zalazar Gomez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Cesar Zambrano Zalazar',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Fransisco Perez Bellavia',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Victoria Ayala Molina',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Mikaela Zalazar Ayala',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Flor Zambrano Ayala',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Sol Gomez Machado',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Daniel Nolasco Fonseca',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Victoria Machado Perez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Flor Nolasco Perez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Paola Gomez Zambrano',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Victoria Martinez Zambrano',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Oscar Bellavia Zambrano',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Oliver Lopez Gomez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Javier Zambrano Zalazar',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Florencia Bellavia Lopez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Carmen Zambrano Molina',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Juan Martinez Fonseca',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Omar Bellavia Zalazar',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Valentin Zalazar Perez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Fernando Bellavia Zambrano',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Pricila Molina Martinez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Andres Gomez Nolasco',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Julian Ayala Machado',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Osmar Zalazar Gomez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Fransis Zalazar Ayala',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Cesar Machado Ayala',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Laura Ayala Zambrano',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Victor Perez Nolasco',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Mariel Lopez Ayala',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Brianda Ayala Machado',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Marco Bellavia Nolasco',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Ariana Bellavia Gomez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Luz Ayala Machado',1)
-insert into persona(nombre,sexo) --PADRE
- values ('David Ayala Bellavia',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Manuel Machado Zambrano',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Poncho Ayala Bellavia',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Mikaela Martinez Bellavia',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Paola Zambrano Ayala',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Perla Molina Ayala',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Michel Lopez Molina',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Julieta Machado Zalazar',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Jasiel Nolasco Molina',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Jennifer Gomez Lopez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Ana Gomez Ayala',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Oscar Zambrano Zalazar',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Andres Molina Gomez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Carlo Fonseca Gomez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Kelly Zambrano Ayala',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Olivia Ayala Molina',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Mari Lopez Martinez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Fransisca Ayala Fonseca',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Anael Molina Perez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Mario Molina Bellavia',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Andrea Molina Perez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Victoria Perez Nolasco',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Rene Ayala Zambrano',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Flor Gomez Martinez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Jesus Ayala Lopez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Mili Ayala Molina',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Esme Perez Zalazar',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Flor Ayala Machado',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Andres Perez Martinez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Mario Lopez Molina',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Mikaela Gomez Martinez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Barbara Perez Lopez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Victoria Bellavia Fonseca',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Paola Zalazar Fonseca',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Barbara Gomez Bellavia',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Julisa Zambrano Martinez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Mario Molina Bellavia',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Mikaela Nolasco Molina',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Oliver Zalazar Molina',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Barbara Ayala Martinez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Mario Martinez Fonseca',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Julisa Zalazar Ayala',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Sol Perez Lopez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Flor Perez Fonseca',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Oliver Martinez Ayala',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Pricila Fonseca Ayala',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Julisa Gomez Machado',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Paola Machado Perez',1)
-insert into persona(nombre,sexo) --PADRE
- values ('Cesar Molina Perez',0)
-insert into persona(nombre,sexo) --PADRE
- values ('Mikaela Molina Perez',1)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Joel','Hernandez Parra',0)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Magdalena','Beltrán Soza',1)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Juan','Felix Manjarrez',0)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Josue','Lazcano Villa Real',0)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Cristina','Benitez Roman',1)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Luis','Quevedo Hernandez',0)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Sergio','Noriega Calderon',0)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Alejandra','Valenzuela Pérez',1)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Jesús','Trujillo García',0)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Zulema','Escobar Osuna',1)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values('Carolina','Peralta Carrillo',1)
+ insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Flor','Lopez Martinez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Cesar','Machado Gomez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Pricila','Machado Zalazar',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mikaela','Zambrano Fonseca',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Julisa','Gomez Fonseca',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Oliver','Zalazar Gomez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Cesar','Zambrano Zalazar',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Fransisco','Perez Bellavia',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Victoria','Ayala Molina',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mikaela','Zalazar Ayala',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Flor','Zambrano Ayala',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Sol','Gomez Machado',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Daniel','Nolasco Fonseca',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Victoria','Machado Perez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Flor','Nolasco Perez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Paola','Gomez Zambrano',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Victoria','Martinez Zambrano',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Oscar','Bellavia Zambrano',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Oliver','Lopez Gomez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Javier','Zambrano Zalazar',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Florencia','Bellavia Lopez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Carmen','Zambrano Molina',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Juan','Martinez Fonseca',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Omar','Bellavia Zalazar',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Valentin','Zalazar Perez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Fernando','Bellavia Zambrano',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Pricila','Molina Martinez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Andres','Gomez Nolasco',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Julian','Ayala Machado',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Osmar','Zalazar Gomez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Fransis','Zalazar Ayala',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Cesar','Machado Ayala',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Laura','Ayala Zambrano',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Victor','Perez Nolasco',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mariel','Lopez Ayala',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Brianda','Ayala Machado',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Marco','Bellavia Nolasco',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Ariana','Bellavia Gomez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Luz','Ayala Machado',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('David','Ayala Bellavia',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Manuel','Machado Zambrano',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Poncho','Ayala Bellavia',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mikaela','Martinez Bellavia',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Paola','Zambrano Ayala',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Perla','Molina Ayala',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Michel','Lopez Molina',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Julieta','Machado Zalazar',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Jasiel','Nolasco Molina',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Jennifer','Gomez Lopez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Ana','Gomez Ayala',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Oscar','Zambrano Zalazar',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Andres','Molina Gomez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Carlo','Fonseca Gomez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Kelly','Zambrano Ayala',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Olivia','Ayala Molina',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mari','Lopez Martinez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Fransisca','Ayala Fonseca',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Anael','Molina Perez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mario','Molina Bellavia',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Andrea','Molina Perez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Victoria','Perez Nolasco',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Rene','Ayala Zambrano',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Flor','Gomez Martinez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Jesus','Ayala Lopez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mili','Ayala Molina',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Esme','Perez Zalazar',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Flor','Ayala Machado',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Andres','Perez Martinez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mario','Lopez Molina',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mikaela','Gomez Martinez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Barbara','Perez Lopez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Victoria','Bellavia Fonseca',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Paola','Zalazar Fonseca',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Barbara','Gomez Bellavia',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Julisa','Zambrano Martinez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mario','Molina Bellavia',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mikaela','Nolasco Molina',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Oliver','Zalazar Molina',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Barbara','Ayala Martinez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mario','Martinez Fonseca',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Julisa','Zalazar Ayala',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Sol','Perez Lopez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Flor','Perez Fonseca',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Oliver','Martinez Ayala',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Pricila','Fonseca Ayala',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Julisa','Gomez Machado',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Paola','Machado Perez',1)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Cesar','Molina Perez',0)
+insert into persona(nombre,apellidos,sexo) --PADRE
+ values ('Mikaela','Molina Perez',1)
 
- insert into persona(nombre,sexo) --HIJO
- values('Elisa Hernandez Quintero',1)
- insert into persona(nombre,sexo) --HIJO
- values('Brian Quintero Beltrán',0)
- insert into persona(nombre,sexo) --HIJO
- values('Alejandra Felix Peralta',1)
- insert into persona(nombre,sexo) --HIJO
- values('Raul Lazcano Hernandez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Carolina Lozano Benitez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Manuel Quevedo Soza',0) 
- insert into persona(nombre,sexo) --HIJO
- values('Romina Noriega Ortiz',1)
- insert into persona(nombre,sexo) --HIJO
- values('Enrique Felix Valenzuela',0)
- insert into persona(nombre,sexo) --HIJO
- values('Fernanda Trujillo Zamora',1)
- insert into persona(nombre,sexo) --HIJO
- values('Daniel Benitez Escobar',0)
- insert into persona(nombre,sexo) --HIJO
- values('Sofia Reyes Carillo',1)
- insert into persona(nombre,sexo) --HIJO
- values('Iván Medina Lopez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Gabriela Machado Valenzuela',1)
- insert into persona(nombre,sexo) --HIJO
- values('Gerardo Trujillo Machado',0)
- insert into persona(nombre,sexo) --HIJO
- values('Bianca Lastra Zambranos',1)
- insert into persona(nombre,sexo) --HIJO
- values('George Escobar Gomez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Karla Zalazar Escobar',1)
- insert into persona(nombre,sexo) --HIJO
- values('Luis Zambrano Reyes',0)
- insert into persona(nombre,sexo) --HIJO
- values('Monica Perez Vazquez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Ulises Hernandez Ayala',0)
- insert into persona(nombre,sexo) --HIJO
- values('Alika Armienta Zalazar',1)
- insert into persona(nombre,sexo) --HIJO
- values('Lorenzo Benitez Zambrano',0)
- insert into persona(nombre,sexo) --HIJO
- values('Dania Zalazar Gomez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Ever Nolasco Gamez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Lucia Lopez Machado',1)
- insert into persona(nombre,sexo) --HIJO
- values('Lucas Casas Nolasco',0)
- insert into persona(nombre,sexo) --HIJO
- values('Lucia Beltrán Gomez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Javier Martinez Martinez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Maya Bellavia Perez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Daniel Lopez Perez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Carolina Zambrano Quintero',1)
- insert into persona(nombre,sexo) --HIJO
- values('Oswualdo Zafaroni Bellavia',0)
- insert into persona(nombre,sexo) --HIJO
- values('Adela Villa Zambrano',1)
- insert into persona(nombre,sexo) --HIJO
- values('Roel Martinez Molina',0)
- insert into persona(nombre,sexo) --HIJO
- values('Deniss Bellavia Noriega',1)
- insert into persona(nombre,sexo) --HIJO
- values('Ruben Zalazar Felix',0)
- insert into persona(nombre,sexo) --HIJO
- values('Marylin Bellavia Ortega',1)
- insert into persona(nombre,sexo) --HIJO
- values('Pedro Valenzuela Molina',0)
- insert into persona(nombre,sexo) --HIJO
- values('Leslie Gomez Parra',1)
- insert into persona(nombre,sexo) --HIJO
- values('Delfino Grande Ayala',0)
- insert into persona(nombre,sexo) --HIJO
- values('Natalia Zalazar Rivera',1)
- insert into persona(nombre,sexo) --HIJO
- values('Josue Zalazar Reinoza',0)
- insert into persona(nombre,sexo) --HIJO
- values('Karla Machado Soza',1)
- insert into persona(nombre,sexo) --HIJO
- values('Omar Rivera Ayala',0)
- insert into persona(nombre,sexo) --HIJO
- values('Victoria Perez Ramirez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Alejandro Lopez Lopez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Jazmin Peralta Ayala',1)
- insert into persona(nombre,sexo) --HIJO
- values('Federico Bellavia Martinez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Fransica Noriega Bellavilla',1)
- insert into persona(nombre,sexo) --HIJO
- values('Sinuhe Molina Ayala',0)
- insert into persona(nombre,sexo) --HIJO
- values('Luisa Ayala Lopez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Hector Machado Molina',0)
- insert into persona(nombre,sexo) --HIJO
- values('Anael Ayala Valdez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Roberto Inzunza Martinez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Kathe Valenzula Zambrano',1)
- insert into persona(nombre,sexo) --HIJO
- values('Alan Osuna Molina',0)
- insert into persona(nombre,sexo) --HIJO
- values('Romina Torres Lopez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Kevin Ortiz Machado',0)
- insert into persona(nombre,sexo) --HIJO
- values('Andrea Nolasco Pacual',1)
- insert into persona(nombre,sexo) --HIJO
- values('Uriel Pascual Gomez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Jimena Gomez Gomez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Rafael Zambrano Camuya',0)
- insert into persona(nombre,sexo) --HIJO
- values('Laurla Molina Verdiales',1)
- insert into persona(nombre,sexo) --HIJO
- values('Angel Fonseca Benitez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Martina Benites Zambrano',1)
- insert into persona(nombre,sexo) --HIJO
- values('Joel Cordoba Ayala',0)
- insert into persona(nombre,sexo) --HIJO
- values('Irlanda Angulo Lopez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Brandon Buelna Ayala',0)
- insert into persona(nombre,sexo) --HIJO
- values('Esther Paz Molina',1)
- insert into persona(nombre,sexo) --HIJO
- values('Damian Molina Vaez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Jessica Ortega Molina',1)
- insert into persona(nombre,sexo) --HIJO
- values('Jasiel Rios Perez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Saiyed Ayala Domingues',1)
- insert into persona(nombre,sexo) --HIJO
- values('Guadalupe Nevarez Gomez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Akire Ayala Nevarez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Baltazar Peralta Ayala',0)
- insert into persona(nombre,sexo) --HIJO
- values('Heidi  Soza Perez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Gabriel Anaya Ayala',0)
- insert into persona(nombre,sexo) --HIJO
- values('Lupita Perez Santirani',1)
- insert into persona(nombre,sexo) --HIJO
- values('Adrian Lopez Netoy',0)
- insert into persona(nombre,sexo) --HIJO
- values('Marisela Rios Gomez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Martin Regil Perez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Blanca Lomas Bellavia',1)
- insert into persona(nombre,sexo) --HIJO
- values('Abdiel Benjarano Zalazar',0)
- insert into persona(nombre,sexo) --HIJO
- values('Georgina Ponce Gomez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Alfredo Abitia Zambrano',0)
- insert into persona(nombre,sexo) --HIJO
- values('Rosario Molina Rios',1)
- insert into persona(nombre,sexo) --HIJO
- values('Benjamin Rios Nolasco',0)
- insert into persona(nombre,sexo) --HIJO
- values('Valeria Zalazar Lugo',1)
- insert into persona(nombre,sexo) --HIJO
- values('Fernando Dono Ayala',0)
- insert into persona(nombre,sexo) --HIJO
- values('Marian Martinez Uriarte',1)
- insert into persona(nombre,sexo) --HIJO
- values('Eduardo Rojo Zalazar',0)
- insert into persona(nombre,sexo) --HIJO
- values('Marai Uriarte Perez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Ismael Abitia Perez',0)
- insert into persona(nombre,sexo) --HIJO
- values('Merari Martinez Navarro',1)
- insert into persona(nombre,sexo) --HIJO
- values('Abram Para Fonseca',0)
- insert into persona(nombre,sexo) --HIJO
- values('Mirella Inda Gomez',1)
- insert into persona(nombre,sexo) --HIJO
- values('Kerim Montaño Machado',0)
- insert into persona(nombre,sexo) --HIJO
- values('Cecilia Molina Ramos',1)
- insert into persona(nombre,sexo) --HIJO
- values('Esteban Cadenas Molina',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Elisa','Hernandez Quintero',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Brian','Quintero Beltrán',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Alejandra','Felix Peralta',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Raul','Lazcano Hernandez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Carolina','Lozano Benitez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Manuel','Quevedo Soza',0) 
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Romina','Noriega Ortiz',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Enrique','Felix Valenzuela',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Fernanda','Trujillo Zamora',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Daniel','Benitez Escobar',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Sofia','Reyes Carillo',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Iván','Medina Lopez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Gabriela','Machado Valenzuela',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Gerardo','Trujillo Machado',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Bianca','Lastra Zambranos',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('George','Escobar Gomez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Karla','Zalazar Escobar',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Luis','Zambrano Reyes',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Monica','Perez Vazquez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Ulises','Hernandez Ayala',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Alika','Armienta Zalazar',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Lorenzo','Benitez Zambrano',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Dania','Zalazar Gomez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Ever','Nolasco Gamez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Lucia','Lopez Machado',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Lucas','Casas Nolasco',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Lucia','Beltrán Gomez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Javier','Martinez Martinez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Maya','Bellavia Perez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Daniel','Lopez Perez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Carolina','Zambrano Quintero',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Oswualdo','Zafaroni Bellavia',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Adela','Villa Zambrano',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Roel','Martinez Molina',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Deniss','Bellavia Noriega',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Ruben','Zalazar Felix',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Marylin','Bellavia Ortega',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Pedro','Valenzuela Molina',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Leslie','Gomez Parra',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Delfino','Grande Ayala',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Natalia','Zalazar Rivera',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Josue','Zalazar Reinoza',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Karla','Machado Soza',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Omar','Rivera Ayala',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Victoria','Perez Ramirez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Alejandro','Lopez Lopez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Jazmin','Peralta Ayala',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Federico','Bellavia Martinez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Fransica','Noriega Bellavilla',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Sinuhe','Molina Ayala',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Luisa','Ayala Lopez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Hector','Machado Molina',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Anael','Ayala Valdez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Roberto','Inzunza Martinez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Kathe','Valenzula Zambrano',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Alan','Osuna Molina',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Romina','Torres Lopez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Kevin','Ortiz Machado',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Andrea','Nolasco Pacual',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Uriel','Pascual Gomez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Jimena','Gomez Gomez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Rafael','Zambrano Camuya',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Laurla','Molina Verdiales',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Angel','Fonseca Benitez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Martina','Benites Zambrano',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Joel','Cordoba Ayala',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Irlanda','Angulo Lopez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Brandon','Buelna Ayala',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Esther','Paz Molina',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Damian','Molina Vaez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Jessica','Ortega Molina',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Jasiel','Rios Perez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Saiyed','Ayala Domingues',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Guadalupe','Nevarez Gomez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Akire','Ayala Nevarez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Baltazar','Peralta Ayala',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Heidi','Soza Perez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Gabriel','Anaya Ayala',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Lupita','Perez Santirani',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Adrian','Lopez Netoy',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Marisela','Rios Gomez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Martin','Regil Perez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Blanca','Lomas Bellavia',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Abdiel','Benjarano Zalazar',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Georgina','Ponce Gomez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Alfredo','Abitia Zambrano',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Rosario','Molina Rios',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Benjamin','Rios Nolasco',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Valeria','Zalazar Lugo',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Fernando','Dono Ayala',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Marian','Martinez Uriarte',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Eduardo','Rojo Zalazar',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Marai','Uriarte Perez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Ismael','Abitia Perez',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Merari','Martinez Navarro',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Abram','Para Fonseca',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Mirella','Inda Gomez',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Kerim','Montaño Machado',0)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Cecilia','Molina Ramos',1)
+ insert into persona(nombre,apellidos,sexo) --HIJO
+ values('Esteban','Cadenas Molina',0)
 
  select * from persona
 
@@ -2745,8 +2745,6 @@ insert into alergiaNino(nino_id,alergia_id)
 values(279, 4)
 insert into alergiaNino(nino_id,alergia_id)
 values(280, 2)
-insert into alergiaNino(nino_id,alergia_id)
-values(281, 1)
 insert into alergiaNino(nino_id,alergia_id)
 values(281, 1)
 --9--
