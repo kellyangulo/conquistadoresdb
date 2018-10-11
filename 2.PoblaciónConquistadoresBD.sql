@@ -125,10 +125,8 @@ insert into campamento(nombre,fecha,calle,colonia)
  insert into especialidad(nombre,descrip,clase_id)
  values('Humanidades','Capacidad de apoyo al projimo',5)
 
-
  select * from especialidad
  
-
 
  ------------------------LLENANDO LA TABLA ACTIVIDAD---------------------------
  --select * from actividad
