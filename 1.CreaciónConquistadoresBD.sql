@@ -79,7 +79,28 @@ add constraint PK_Ocupacion primary key(ID)
 alter table Ocupacion
 add constraint UQ_NombreOcupacion unique (Nombre)
 
---------Empieza las tablas que dependen
+create table Reunion(
+	ID int identity,
+	Fecha date not null,
+	Cuota smallint 
+)
+alter table Reunion 
+add constraint PK_ReunionID primary key (ID)
+
+alter table Reunion 
+add constraint CK_FechaReunion check (Fecha <= getdate())
+
+alter table Reunion 
+add constraint CK_Cuota check (Cuota >= 0 )
+
+create table Pulcritud(
+	ID tinyint identity,
+	Nombre varchar(10) not null
+)
+alter table Pulcritud
+add constraint PK_PulcritudID primary key (ID)
+
+---------------------------------------------TABLAS DEPENDIENTES---------------------------------------------
 create table unidad(
 	id int identity,
 	club_id int,
@@ -187,22 +208,29 @@ create table ninoActividad(
 alter table ninoActividad
 add constraint CK_FechaninoActividad check (fecha_realizacion <= getdate())
 
-create table Reunion(
-	ID int identity,
-	Fecha date not null
+create table PagoCuota(
+	ID int identity not null,
+	nino_id int not null,
+	reunion_id int not null,
+	FechaPago date not null,
+	Cantidad int not null
 )
-alter table Reunion 
-add constraint PK_ReunionID primary key (ID)
 
-alter table Reunion 
-add constraint CK_FechaReunion check (Fecha <= getdate())
+alter table PagoCuota
+add constraint PK_PagoCuotaID primary key (ID)
 
-create table Pulcritud(
-	ID tinyint identity,
-	Nombre varchar(10) not null
-)
-alter table Pulcritud
-add constraint PK_PulcritudID primary key (ID)
+alter table PagoCuota
+add constraint CK_FechaPagoCuota check (FechaPago <= getdate())
+
+alter table PagoCuota
+add constraint FK_PagoCuota_nino foreign key (nino_id) references nino (nino_id)
+
+alter table PagoCuota
+add constraint FK_PagoCuota_ReunionID foreign key (reunion_id) references Reunion (ID)
+
+alter table PagoCuota
+add constraint CK_Cantidad check (Cantidad > 0)
+
 
 create table ReunionNino(
 	nino_id int not null,
@@ -211,10 +239,14 @@ create table ReunionNino(
 	pulcritud_id tinyint,
 	tarea bit, 
 	asitencia bit,
+	PagoCuotaID int
 	constraint FK_ReunionNino_nino foreign key (nino_id) references nino (nino_id),
 	constraint FK_ReunionNinoID foreign key (reunion_id) references Reunion(ID),
 	constraint FK_PulcritudIDn foreign key (pulcritud_id) references Pulcritud (ID)
 )
+
+alter table ReunionNino
+add constraint FK_ReunionNino_PagoCuota foreign key (PagoCuotaID) references PagoCuota (ID)
 
 create table ninoUnidad(
 	nino_id int not null,
@@ -262,8 +294,6 @@ add constraint FK_HistorialTrabajador_Trabajador foreign key (trabajador_id) ref
 
 alter table HistorialTrabajador
 add constraint CK_Fecha_HistorialTrabajador check (fecha <= getdate())
-
-
 
 create table EspecialidadTrabajador(
 	trabajador_id int not null,
