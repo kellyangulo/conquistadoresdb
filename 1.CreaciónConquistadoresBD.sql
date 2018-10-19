@@ -231,7 +231,6 @@ add constraint FK_PagoCuota_ReunionID foreign key (reunion_id) references Reunio
 alter table PagoCuota
 add constraint CK_Cantidad check (Cantidad > 0)
 
-
 create table ReunionNino(
 	nino_id int not null,
 	reunion_id int not null,
@@ -301,4 +300,18 @@ create table EspecialidadTrabajador(
 	constraint FK_trabajador_EspecialidadTrabajador foreign key (trabajador_id) references trabajador (trabajador_id),
 	constraint FK_especialidad_EspecialidadTrabajador foreign key (especialidad_id) references especialidad (id)
 )
+create table Padre_Nino
+(
+	IDNino int not null,
+	IDPapa int not null
+)
+
+alter table Padre_Nino
+add constraint FK_Padre_Nino_PapaID Foreign key (IDPapa) references padre (padre_id)
+
+alter table Padre_Nino
+add constraint FK_Padre_Nino_NiñoID Foreign key (IDNino) references nino (nino_id)
+
+alter table Padre_Nino
+add constraint UQ_Padre_Niño unique (IDPapa,IDNino)
 

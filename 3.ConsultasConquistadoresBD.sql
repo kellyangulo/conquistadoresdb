@@ -1,7 +1,6 @@
 use ConquistadoresBD
 GO
 
-
 ------------------------------------------------CONSULTAS NO TRIVIALES------------------------------------------------------
  
 --1. MOSTRAR LA ESTATURA PROMEDIO DE NIÑOS DE CADA UNIDAD
@@ -57,19 +56,15 @@ where  n.actividad_id in
  inner join ninoActividad  on a.id = n.actividad_id 
  where  a.nombre like '%Señalacion%' and n.fecha_realizacion < '02/05/2018') 
 group by n.actividad_id
-SELECT * FROM ACTIVIDAD --21,1  , 
-SELECT * FROM ninoActividad n where n.actividad_id = 1
 
 --10.CANTIDAD DE NIÑOS QUE HAN REALIZADO LA ACTIVIDAD DE "VOLEIBOL" PERO NO LA DE "CICLISMO"
-
---TERMINARLA
-((select n1.nino_id from actividad a 
+select COUNT(*) as [Cantidad]  FROM ((select n1.nino_id from actividad a 
  inner join ninoActividad n1 on a.id = n1.actividad_id 
  where  a.nombre like '%Voleibol%' )
 	except
  (select n1.nino_id from actividad a 
  inner join ninoActividad n1 on a.id = n1.actividad_id 
- where  a.nombre like '%Ciclismo%' ))
+ where  a.nombre like '%Ciclismo%' )) nw
  
 --11.NOMBRE DE LOS TRABAJADORES QUE SE HAN ESTADO EN MAS DE CLUB 
 select p.nombre from persona p
@@ -80,30 +75,70 @@ FROM HistorialTrabajador H
 GROUP BY  H.trabajador_id
 HAVING count( H.trabajador_id) > 1) 
 
---12.NOMBRE DE LAS UNIDADES QUE TENGAN NIÑOS MAYORES DE 10 AÑOS DE EDAD
-select nino_id from nino where 13 >= DATEDIFF(yy,GETDATE(),nino.fecha_nacimiento)
+--12.NOMBRE DE LAS UNIDADES QUE TENGAN NIÑOS MENORES DE 11 AÑOS DE EDAD
+select u.nombre from  ninoUnidad n
+inner join unidad u on n.unidad_id = u.id
+where  n.nino_id in 
+(select nino_id from nino where 11 > DATEDIFF(yy,nino.fecha_nacimiento,GETDATE()))
 
---13.NOMBRE DE LAS CLASES QUE SOLO TENGAN NIÑOS MAYORES DE 12 AÑOS DE EDAD
+--13.NOMBRE DE LAS UNIDADES QUE SOLO TENGAN NIÑOS MAYORES DE 10 AÑOS DE EDAD
+select u.nombre from  ninoUnidad n
+inner join unidad u on n.unidad_id = u.id
+where  n.nino_id in 
+(select nino_id from nino where 10 < DATEDIFF(yy,nino.fecha_nacimiento,GETDATE()))
+except 
+(select u.nombre from  ninoUnidad n
+inner join unidad u on n.unidad_id = u.id
+where  n.nino_id in 
+(select nino_id from nino where 10 > DATEDIFF(yy,nino.fecha_nacimiento,GETDATE())))
 
---14.NOMBRE DE LAS CLASES QUE TENGAN NIÑOS MENORES DE 15 AÑOS DE EDAD
+--14.NOMBRE DE LAS CLASES QUE TENGAN NIÑOS MENORES DE 13 AÑOS DE EDAD
+select c.nombre from  clase c
+inner join ninoClase nc  on nc.clase_id = c.id
+where  nc.nino_id in 
+(select nino_id from nino where 13 > DATEDIFF(yy,nino.fecha_nacimiento,GETDATE()))
+GROUP BY C.nombre
 
 --15.CANTIDAD DE DINERO OBTENIDA DE LAS CUOTAS DADAS EN LA REUNION 12
+select SUM(p.Cantidad) as  [Cantidad] from ReunionNino r
+inner join PagoCuota p on r.PagoCuotaID = p.ID
+where r.reunion_id = 12
 
+--16.CANTIDAD DE DINERO OBTENIDO POR CADA REUNION
+select r.reunion_id as [Reunion],SUM(p.Cantidad) as  [Cantidad] from ReunionNino r
+inner join PagoCuota p on r.PagoCuotaID = p.ID
+group by r.reunion_id
 
---16.CANTIDAD DE NIÑOS QUE ASISTIERON A LA REUNION 8
-
-
-
---17.NOMBRE DE LOS NIÑOS MÁS CUMPLIDOS DE LA REUNION 2
-
+--17.CUANTOS NIÑOS HAN REALIZADO LA ACTIVIDAD "CICLISMO" Y TAMBIÉN "AJEDREZ"
+select COUNT(*) from
+(((select n.nino_id from actividad a 
+ inner join ninoActividad n on a.id = n.actividad_id 
+ where  a.nombre like '%ciclismo%')
+ union
+ (select n.nino_id from actividad a 
+ inner join ninoActividad n on a.id = n.actividad_id 
+ where a.nombre like '%voleibol%'))) as [Cantidad de niños]
 
 --18.NOMBRE DE LOS NIÑOS QUE HAN ESTADO EN MÁS DE UNA CLASE
-
+select p.nombre+' '+p.apellidos as  [Niños] from persona p
+inner join  nino n on p.id = n.nino_id
+where exists
+(SELECT  c.nino_id, count( c.nino_id) as Cantidad
+FROM ninoClase c
+GROUP BY c.nino_id
+HAVING count(c.nino_id) > 1) 
 
 --19.NOMBRE DE LOS NIÑOS QUE HAN ESTADO EN MÁS DE UNA CLUB
 
-
 --20.NOMBRE DE LOS PAPAS QUE TIENE MÁS DE UN HIJO
+select p.nombre+' '+p.apellidos as  [Nombre papá] from persona p
+inner join  padre pp on p.id = pp.padre_id
+where exists
+(SELECT  pn.IDPapa, count( pn.IDPapa) as Cantidad
+FROM Padre_Nino pn
+GROUP BY pn.IDPapa
+HAVING count(pn.IDPapa) > 1)
+
 
 
 
@@ -121,23 +156,34 @@ inner join campamentoUnidad cu on c.id = cu.campamento_id
 inner join unidad u on cu.unidad_id = u.id
 where c.nombre like '%La flor%'
 
---23.CANTIDAD DE PAPAS QUE SU OCUPACION ES ""
---24.CANTIDAD DE DINERO OBTENIDO POR CADA REUNION
---25.NOMBRE DE LOS NIÑOS QUE PERTENECEN A LAS CLASE B
---26.NOMBRE DE LOS NIÑOS QUE PERTENECEN AL CLUB ""
---27.CUANTOS NIÑOS HAN REALIZADO ESTA ACTIVIDAD Y TAMBIÉN ESTA
+--23.CANTIDAD DE PAPAS QUE SU OCUPACION ES "DESAROLLADOR"
+select  COUNT(o.ID) as [Cantidad]  from padre p
+inner join Ocupacion o on p.Ocupacion_ID = o.ID
+where o.Nombre like '%Desarrollador%' 
+group by o.ID
+
+--24.NIÑOS QUE ASISTIERON A LA REUNION 8 
+select p.nombre+' '+p.apellidos as  [Niños] from ReunionNino r
+inner join nino n on n.nino_id = r.nino_id
+inner join persona p on p.id = n.nino_id
+where r.reunion_id = 8
+
+--25.NOMBRE DE TODOS LOS NIÑOS QUE PERTENECEN A LAS CLASE B EN CUALQUIER CLUB
+select p.nombre+' '+p.apellidos as [Nombre] from  clase c
+inner join ninoClase nc  on nc.clase_id = c.id
+inner join nino n on nc.nino_id = n.nino_id
+inner join persona p on n.nino_id = p.id
+where c.nombre like '%B%'
+
+--26.NOMBRE DE LOS NIÑOS MÁS CUMPLIDOS DE LA REUNION 1
+select p.nombre+' '+p.apellidos as  [Niños] from ReunionNino r
+inner join nino n on n.nino_id = r.nino_id
+inner join persona p on p.id = n.nino_id
+where r.reunion_id = 1 and r.puntualidad = 1 and r.pulcritud_id = 1 and r.tarea = 1 and r.asitencia = 1
+
+--27.NOMBRE DE LOS NIÑOS QUE PERTENECEN AL CLUB ""
 --28.
 --29.
 --30.
-
--------------------------------- MAL 
-
---. MOSTRAR EL NOMBRE DE LAS UNIDADES QUE SOLO TENGAN NIÑOS MAYORES DE 10 AÑOS
-select u.nombre from unidad u
-union 
-(select fecha_nacimiento, datediff(yy,getdate(),fecha_nacimiento) from nino)
-inner join ninoUnidad nu on u.id = nu.unidad_id
-inner join nino n on nu.nino_id = n.nino_id
-where datediff(yy,getdate(),n.fecha_nacimiento)
 
 
