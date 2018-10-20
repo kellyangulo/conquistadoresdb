@@ -228,23 +228,132 @@ inner join persona p on p.id = n.nino_id
 where r.puntualidad = 1 and r.pulcritud_id = 1 and r.tarea = 1 and r.asitencia = 1
 
 --33.CANTIDAD DE NIÑOS ALERGICOS POR CLUB
+select c.nombre as [Club],COUNT(n.nino_id) as [Cantidad] from alergiaNino n
+inner join ninoClub nc on n.nino_id = nc.nino_id
+inner join club c on c.id = nc.club_id
+group by c.nombre
+
 --34.CANTIDAD DE NIÑOS QUE ASISTIERON A LAS REUNIONES
---35.CANTIDAD DE TODAS LAS CUOTAS RECIBIDAS EN LA FECHA '06/15/2018'
+select r.ID as [ Reunion],COUNT(n.nino_id) as [Cantidad] from ReunionNino n
+inner join Reunion r on r.ID = n.reunion_id
+group by r.ID
+
+--35.CANTIDAD DE CUOTAS RECIBIDAS EN LA FECHA '06/15/2018'
+select reunion_id as [Nombre reunion], COUNT(nino_id) as [Cantidad de cuotas recibidas] from PagoCuota 
+where FechaPago = '06/15/2018'
+group by reunion_id
+
 --36.NOMBRE DE LOS CAMPAMENTOS RELIZADOS EN LA FECHA '11/15/2017'
+select nombre as [Campamentos] from campamento
+where fecha = '11/15/2017'
+
 --37.NOMBRE DE LOS TRABAJADORES QUE SIGUEN ACTIVOS
+select p.nombre+' '+p.apellidos as [Trabajadores activos] from trabajador t 
+inner join persona p on p.id = t.trabajador_id
+where t.estatus = 1
+
 --38.CANTIDAD DE REUNIONES RELAIZADAS EN EL MES DE ENERO DEL 2018
+select COUNT(ID) as [Reuniones relizadad en enero] from Reunion
+where Fecha like  '%-01-%'
+
 --39.NOMBRE DE LAS UNIDADES QUE TIENEN NIÑOS CON ALERGIAS
+select u.nombre as [Unidad] from alergiaNino a
+inner join ninoUnidad n on a.nino_id = n.nino_id
+inner join unidad u on n.unidad_id  = u.id
+group by u.nombre
+
 --40.CANTIDAD DE PADRES POR OCUPACIÓN
---41.MOSTRAR EL NOMBRE DE LOS NIÑOS QUE SEAN ALERGICOS A LAS  "" PERO NO A ""
---42.NOMBRE DE LAS UNIDADES QUE NADIE RELIZO EN EL MES DE ""
+select o.Nombre as [Ocupación] ,COUNT(o.Nombre) as [Cantidad] from padre p
+inner join Ocupacion o on p.Ocupacion_ID = o.ID
+group by o.Nombre
+
+--41.MOSTRAR EL NOMBRE DE LOS NIÑOS QUE SEAN ALERGICOS A LA "EXPOSICIÓN SOLAR" PERO NO AL "MOHO"
+select p.nombre+' '+p.apellidos as [Nombre] from alergia a
+inner join alergiaNino na on a.id = na.alergia_id
+inner join nino n on na.nino_id = n.nino_id
+inner join persona p on n.nino_id = p.id
+where a.descrip like '%solar%'
+except
+(select p.nombre+' '+p.apellidos as [Nombre] from alergia a
+inner join alergiaNino na on a.id = na.alergia_id
+inner join nino n on na.nino_id = n.nino_id
+inner join persona p on n.nino_id = p.id
+where a.descrip like '%moho%')
+
+--42.NOMBRE DE LAS ACTIVIDADES QUE NADIE RELIZO EN EL MES DE "ABRIL" DEL AÑO EN CURSO
+select nombre from actividad
+except
+(select a.nombre from ninoActividad r 
+inner join actividad a on r.actividad_id = a.id
+where fecha_realizacion like '%2018-04-%'
+GROUP BY a.nombre)
+
 --43.NOMBRE DE LOS NIÑOS QUE NO HAYAN ASISTIDO A NINGUNA REUNION
---44.NOMBRE DE LOS NIÑOS QUE ASISTIERON AL CAMPAMENTO "" 
---45.NOMBRE DE LOS NIÑOS QUE ASISTIERON AL CAMPAMENTO "" PERO NO AL ""
---46.NOMBRE DE LOS INSTRUCTORES QUE TIENEN LA ESPECIALIDAD DE ""
---47.NOMBRE DE LOS INSTRUCTORES QUE TENGAN LA ESPECIALIDAD DE "" Y TAMBIÉN LA ""
+select p.nombre+' '+p.apellidos as [Niño] from persona p
+inner join nino n on p.id = n.nino_id
+except
+(select p.nombre+' '+p.apellidos as [Niño] from persona p
+inner join nino n on p.id = n.nino_id
+inner join ReunionNino r on n.nino_id = r.nino_id)
+
+--44.NOMBRE DE LOS NIÑOS QUE ASISTIERON AL CAMPAMENTO "EL PINO" 
+select p.nombre+' '+p.apellidos as [Niño] from campamento c 
+inner join campamentoUnidad cu on c.id = cu.campamento_id
+inner join ninoUnidad u on cu.unidad_id = u.unidad_id
+inner join nino n on u.nino_id = n.nino_id
+inner join persona p on n.nino_id = p.id
+where c.nombre like '%El pino%'
+
+--45.NOMBRE DE LOS NIÑOS QUE ASISTIERON AL CAMPAMENTO "EL REENCUENTRO GIRLS" PERO NO AL "AMANECER GIRLS"
+select p.nombre+' '+p.apellidos as [Niño] from campamento c 
+inner join campamentoUnidad cu on c.id = cu.campamento_id
+inner join ninoUnidad u on cu.unidad_id = u.unidad_id
+inner join nino n on u.nino_id = n.nino_id
+inner join persona p on n.nino_id = p.id
+where c.nombre like '%EL REENCUENTRO GIRLS%'
+except
+(select p.nombre+' '+p.apellidos as [Niño] from campamento c 
+inner join campamentoUnidad cu on c.id = cu.campamento_id
+inner join ninoUnidad u on cu.unidad_id = u.unidad_id
+inner join nino n on u.nino_id = n.nino_id
+inner join persona p on n.nino_id = p.id
+where c.nombre like '%AMANECER GIRLS%')
+
+--46.NOMBRE DE LOS INSTRUCTORES QUE TIENEN LA ESPECIALIDAD DE "HUMANIDADES"
+select p.nombre+' '+p.apellidos as [Trabajador] from especialidad e
+inner join EspecialidadTrabajador t on e.id = t.especialidad_id
+inner join persona p on t.trabajador_id = p.id
+where e.nombre like '%HUMANIDADES%'
+
+--47.NOMBRE DE LOS INSTRUCTORES QUE TENGAN LA ESPECIALIDAD DE "SEGURIDAD" Y TAMBIÉN LA "PRIMEROS AUXILIOS"
+select p.nombre+' '+p.apellidos as [Trabajador] from especialidad e
+inner join EspecialidadTrabajador t on e.id = t.especialidad_id
+inner join persona p on t.trabajador_id = p.id
+where e.nombre like '%SEGURIDAD%'
+intersect
+(select p.nombre+' '+p.apellidos as [Trabajador] from especialidad e
+inner join EspecialidadTrabajador t on e.id = t.especialidad_id
+inner join persona p on t.trabajador_id = p.id
+where e.nombre like '%PRIMEROS AUXILIOS%')
+
 --48.NOMBRE DE TODOS LOS EMPLEADOS A EXCEPCION DE INSTRUCTORES 
+select p.nombre+' '+p.apellidos as [Trabajador] from tipoEmpleado t
+inner join trabajador e on t.id = e.tipoEmp_id
+inner join persona p on e.trabajador_id = p.id
+where t.nombre not like '%INSTRUCTOR%'
+
 --49.NOMBRE DE TODOS LOS DIRECTORES POR CLUB
---50.NOMBRE DE TODOS LOS NIÑOS QUE HAYAN NACIDO EN EL MES DE ""
+select c.nombre as [Club] , p.nombre+' '+p.apellidos as [Director] from tipoEmpleado t
+inner join trabajador e on t.id = e.tipoEmp_id
+inner join persona p on e.trabajador_id = p.id
+inner join HistorialTrabajador h on e.trabajador_id = h.trabajador_id
+inner join club c on  h.club_id = c.id
+where t.nombre like 'Director'
+
+--50.NOMBRE DE TODOS LOS NIÑOS QUE HAYAN NACIDO EN EL MES DE "NOVIEMBRE"
+selecT p.nombre+' '+p.apellidos as [Niño] from persona p
+inner join nino n on n.nino_id = p.id
+where n.fecha_nacimiento like  '%-11-%'
 
 
 
