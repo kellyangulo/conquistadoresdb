@@ -173,7 +173,10 @@ create table telefonoPadre(
 	padre_id int not null, 
 	constraint FK_telefono_padre foreign key (padre_id) references padre (padre_id)
 )
-                      
+
+alter table telefonoPadre
+add constraint UQ_telefonoPadre unique (numero)                      
+
 create table nino(                                 
 	nino_id int, 
 	estatura tinyint  not null,
@@ -207,6 +210,9 @@ create table ninoActividad(
 
 alter table ninoActividad
 add constraint CK_FechaninoActividad check (fecha_realizacion <= getdate())
+
+alter table ninoActividad
+add constraint UQ_ninoActividad unique (nino_id,actividad_id,fecha_realizacion)
 
 create table PagoCuota(
 	ID int identity not null,
@@ -247,10 +253,13 @@ create table ReunionNino(
 alter table ReunionNino
 add constraint FK_ReunionNino_PagoCuota foreign key (PagoCuotaID) references PagoCuota (ID)
 
+alter table ReunionNino
+add constraint UQ_ReunionNino unique (nino_id,reunion_id)
+
 create table ninoUnidad(
 	nino_id int not null,
 	unidad_id int not null,
-	fecha date
+	fecha date not null
 )
 alter table ninoUnidad
 add constraint FK_ninoUnidad_nino foreign key (nino_id) references nino (nino_id)
@@ -260,6 +269,9 @@ add constraint FK_ninoUnidad_unidad foreign key (unidad_id) references unidad(id
 
 alter table ninoUnidad
 add constraint CK_FechaNinoUnidad check (fecha <= getdate())
+
+alter table ninoUnidad
+add constraint UQ_ninoUnidad unique (nino_id,unidad_id,fecha)
 
 create table ninoClase(
 	nino_id int not null,
@@ -274,6 +286,9 @@ add constraint CK_FechaNinoClase check (fecha <= getdate())
 
 alter table ninoClase
 add constraint FK_ninoClase_clase foreign key (clase_id) references clase(id)
+
+alter table ninoClase
+add constraint UQ_ninoClase unique (nino_id,clase_id,fecha)
 
 create table trabajador(
 	trabajador_id int,
@@ -293,6 +308,9 @@ add constraint FK_HistorialTrabajador_Trabajador foreign key (trabajador_id) ref
 
 alter table HistorialTrabajador
 add constraint CK_Fecha_HistorialTrabajador check (fecha <= getdate())
+
+alter table HistorialTrabajador
+add constraint UQ_HistorialTrabajador unique (trabajador_id,club_id,fecha)
 
 create table EspecialidadTrabajador(
 	trabajador_id int not null,
@@ -315,3 +333,20 @@ add constraint FK_Padre_Nino_NiñoID Foreign key (IDNino) references nino (nino_i
 alter table Padre_Nino
 add constraint UQ_Padre_Niño unique (IDPapa,IDNino)
 
+create table ninoClub
+(
+	nino_id int not null,
+	club_id int not null,
+	fecha date not null
+)
+alter table ninoClub
+add constraint FK_ninoClub_nino foreign key (nino_id) references nino (nino_id)
+
+alter table ninoClub
+add constraint FK_ninoClub_club foreign key (club_id) references club(id)
+
+alter table ninoClub
+add constraint CK_FechaNinoClub check (fecha <= getdate())
+
+alter table ninoClub
+add constraint UQ_ninoClub unique (nino_id,club_id,fecha)

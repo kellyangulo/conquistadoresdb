@@ -114,7 +114,7 @@ select COUNT(*) from
 (((select n.nino_id from actividad a 
  inner join ninoActividad n on a.id = n.actividad_id 
  where  a.nombre like '%ciclismo%')
- union
+ intersect
  (select n.nino_id from actividad a 
  inner join ninoActividad n on a.id = n.actividad_id 
  where a.nombre like '%voleibol%'))) as [Cantidad de niños]
@@ -129,6 +129,13 @@ GROUP BY c.nino_id
 HAVING count(c.nino_id) > 1) 
 
 --19.NOMBRE DE LOS NIÑOS QUE HAN ESTADO EN MÁS DE UNA CLUB
+select p.nombre+' '+p.apellidos as  [Nombre niño] from persona p
+inner join  nino n on p.id = n.nino_id
+where exists
+(SELECT  c.nino_id, count( c.nino_id) as Cantidad
+FROM ninoClub c
+GROUP BY c.nino_id
+HAVING count(c.nino_id) > 1) 
 
 --20.NOMBRE DE LOS PAPAS QUE TIENE MÁS DE UN HIJO
 select p.nombre+' '+p.apellidos as  [Nombre papá] from persona p
@@ -140,17 +147,16 @@ GROUP BY pn.IDPapa
 HAVING count(pn.IDPapa) > 1)
 
 
-
-
 -------------------------------------------------CONSULTAS TRIVIALES--------------------------------------------------------
 
 --21. MOSTRAR EL NOMBRE DE LOS NIÑOS QUE SEAN ALERGICOS AL POLEN
 select p.nombre +' '+ p.apellidos [Niños alergicos al polen]  from nino n
 inner join persona p on n.nino_id = p.id
 inner join alergiaNino a on a.nino_id = n.nino_id
-where a.alergia_id = 2
+inner join alergia e on a.alergia_id = e.id
+where e.descrip like '%polen%'
 
---22.NOMBRE DE LAS UNIDADES QUE ASISTIERON AL CAMPAMENTO 
+--22.NOMBRE DE LAS UNIDADES QUE ASISTIERON AL CAMPAMENTO "LA FLOR"
 select u.nombre from campamento c
 inner join campamentoUnidad cu on c.id = cu.campamento_id
 inner join unidad u on cu.unidad_id = u.id
@@ -181,9 +187,68 @@ inner join nino n on n.nino_id = r.nino_id
 inner join persona p on p.id = n.nino_id
 where r.reunion_id = 1 and r.puntualidad = 1 and r.pulcritud_id = 1 and r.tarea = 1 and r.asitencia = 1
 
---27.NOMBRE DE LOS NIÑOS QUE PERTENECEN AL CLUB ""
---28.
---29.
---30.
+--27.NOMBRE DE LOS NIÑOS QUE PERTENECEN AL CLUB "SUNNY CLUB"
+select p.nombre+' '+p.apellidos as [Nombre] from  club c
+inner join ninoClub nc  on nc.club_id = c.id
+inner join nino n on nc.nino_id = n.nino_id
+inner join persona p on n.nino_id = p.id
+where c.nombre like '%Sunny club%'
+
+--28.CANTIDAD DE NIÑOS POR UNIDAD
+select u.nombre as [Unidad], COUNT(n.nino_id) as [Cantidad de niños] from ninoUnidad n
+inner join unidad u on n.unidad_id = u.id
+group by u.nombre
+
+--29.CANTIDAD DE NIÑOS POR CLUB
+select c.nombre as [Club], COUNT(n.nino_id) as [Cantidad de niños] from ninoClub n
+inner join club c on n.club_id = c.id
+group by c.nombre
+
+--30.CANTIDAD DE NIÑOS QUE PAGARON LA CUOTA DE LA REUNION 3
+select COUNT(p.nino_id) as [Cantidad de niños] from PagoCuota p
+where p.reunion_id = 3
+
+--31.MOSTRAR EL NOMBRE DE LOS NIÑOS QUE SEAN ALERGICOS A LAS  NUECES Y AL POLVO
+(select p.nombre +' '+ p.apellidos [Niños alergicos]  from nino n
+inner join persona p on n.nino_id = p.id
+inner join alergiaNino a on a.nino_id = n.nino_id
+inner join alergia e on a.alergia_id = e.id
+where e.descrip like '%nueces%')
+ intersect
+(select p.nombre +' '+ p.apellidos [Niños alergicos]  from nino n
+inner join persona p on n.nino_id = p.id
+inner join alergiaNino a on a.nino_id = n.nino_id
+inner join alergia e on a.alergia_id = e.id
+where e.descrip like '%polvo%')
+
+--32.NOMBRE DE LOS NIÑOS MÁS CUMPLIDOS POR REUNION
+select r.reunion_id as [Reunion] , p.nombre+' '+p.apellidos as  [Niños] from ReunionNino r
+inner join nino n on n.nino_id = r.nino_id
+inner join persona p on p.id = n.nino_id
+where r.puntualidad = 1 and r.pulcritud_id = 1 and r.tarea = 1 and r.asitencia = 1
+
+--33.CANTIDAD DE NIÑOS ALERGICOS POR CLUB
+--34.CANTIDAD DE NIÑOS QUE ASISTIERON A LAS REUNIONES
+--35.CANTIDAD DE TODAS LAS CUOTAS RECIBIDAS EN LA FECHA '06/15/2018'
+--36.NOMBRE DE LOS CAMPAMENTOS RELIZADOS EN LA FECHA '11/15/2017'
+--37.NOMBRE DE LOS TRABAJADORES QUE SIGUEN ACTIVOS
+--38.CANTIDAD DE REUNIONES RELAIZADAS EN EL MES DE ENERO DEL 2018
+--39.NOMBRE DE LAS UNIDADES QUE TIENEN NIÑOS CON ALERGIAS
+--40.CANTIDAD DE PADRES POR OCUPACIÓN
+--41.MOSTRAR EL NOMBRE DE LOS NIÑOS QUE SEAN ALERGICOS A LAS  "" PERO NO A ""
+--42.NOMBRE DE LAS UNIDADES QUE NADIE RELIZO EN EL MES DE ""
+--43.NOMBRE DE LOS NIÑOS QUE NO HAYAN ASISTIDO A NINGUNA REUNION
+--44.NOMBRE DE LOS NIÑOS QUE ASISTIERON AL CAMPAMENTO "" 
+--45.NOMBRE DE LOS NIÑOS QUE ASISTIERON AL CAMPAMENTO "" PERO NO AL ""
+--46.NOMBRE DE LOS INSTRUCTORES QUE TIENEN LA ESPECIALIDAD DE ""
+--47.NOMBRE DE LOS INSTRUCTORES QUE TENGAN LA ESPECIALIDAD DE "" Y TAMBIÉN LA ""
+--48.NOMBRE DE TODOS LOS EMPLEADOS A EXCEPCION DE INSTRUCTORES 
+--49.NOMBRE DE TODOS LOS DIRECTORES POR CLUB
+--50.NOMBRE DE TODOS LOS NIÑOS QUE HAYAN NACIDO EN EL MES DE ""
+
+
+
+
+
 
 
