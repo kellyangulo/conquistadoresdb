@@ -222,10 +222,11 @@ inner join alergia e on a.alergia_id = e.id
 where e.descrip like '%polvo%')
 
 --32.NOMBRE DE LOS NIÑOS MÁS CUMPLIDOS POR REUNION
-select r.reunion_id as [Reunion] , p.nombre+' '+p.apellidos as  [Niños] from ReunionNino r
+select r.reunion_id as [Reunion] , p.nombre+' '+p.apellidos as  [Niños] from ReunionNino r 
 inner join nino n on n.nino_id = r.nino_id
 inner join persona p on p.id = n.nino_id
 where r.puntualidad = 1 and r.pulcritud_id = 1 and r.tarea = 1 and r.asitencia = 1
+order by r.reunion_id 
 
 --33.CANTIDAD DE NIÑOS ALERGICOS POR CLUB
 select c.nombre as [Club],COUNT(n.nino_id) as [Cantidad] from alergiaNino n
