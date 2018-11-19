@@ -113,17 +113,18 @@ insert into campamento(nombre,fecha,calle,colonia)
  insert into especialidad(nombre,descrip,clase_id)
  values('Atleta','Dominio en el deporte',1)
  insert into especialidad(nombre,descrip,clase_id)
- values('Primeros auxilios','Dominio en la salud',7)
- insert into especialidad(nombre,descrip,clase_id)
  values('Ecología','Dominio en todo el entorno animal',2)
- insert into especialidad(nombre,descrip,clase_id)
- values('Historiador','Saber sobre cultura general',4)
  insert into especialidad(nombre,descrip,clase_id)
  values('Artista','Dominio en las artes manuales',3)
  insert into especialidad(nombre,descrip,clase_id)
- values('Seguridad','Capacidad de defensa propia',6)
+ values('Historiador','Saber sobre cultura general',4)
  insert into especialidad(nombre,descrip,clase_id)
  values('Humanidades','Capacidad de apoyo al projimo',5)
+ insert into especialidad(nombre,descrip,clase_id)
+ values('Seguridad','Capacidad de defensa propia',6)
+ insert into especialidad(nombre,descrip,clase_id)
+ values('Primeros auxilios','Dominio en la salud',7)
+ 
 
  select * from especialidad
  
@@ -240,7 +241,7 @@ insert into campamento(nombre,fecha,calle,colonia)
  insert into actividad(nombre)
  values('Ayuda al projimo')
  insert into actividad(nombre)
- values('Alfabetizacin')
+ values('Alfabetizacion')
  insert into actividad(nombre)
  values('Derechos Humanos')
 
@@ -1887,11 +1888,11 @@ insert into EspecialidadActividad(especialidad_id,actividad_id)
 values(4,39)
 
 insert into EspecialidadActividad(especialidad_id,actividad_id)
-values(5,43)
-insert into EspecialidadActividad(especialidad_id,actividad_id)
 values(5,44)
 insert into EspecialidadActividad(especialidad_id,actividad_id)
 values(5,45)
+insert into EspecialidadActividad(especialidad_id,actividad_id)
+values(5,46)
 
 insert into EspecialidadActividad(especialidad_id,actividad_id)
 values(6,51)
@@ -4827,4 +4828,9 @@ values(300,10,'10/10/2017')
 
 select * from ninoClub
 
+-------------------------LLENANDO LA TABLA NIÑO INVESTIDURA----------------------------
+select * from Niño_Investidura
+select * from EspecialidadActividad ea inner join actividad a on a.id = ea.actividad_id inner join especialidad k on k.id = ea.especialidad_id 
 
+insert into Niño_Investidura (nino_id,clase_id)
+values(,)
