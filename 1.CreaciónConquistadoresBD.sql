@@ -218,7 +218,6 @@ add constraint UQ_telefonoPadre unique (numero)
 
 go
 create table nino(               
-                  
 	nino_id int, 
 	estatura tinyint  not null,
 	peso tinyint not null,
@@ -248,7 +247,6 @@ add constraint UQ_Alergia_Nino unique (nino_id,alergia_id)
 
 go
 create table ninoActividad(
-
 	actividad_id int not null,
 	nino_id int not null,
 	fecha_realizacion date
@@ -265,7 +263,6 @@ add constraint UQ_ninoActividad unique (nino_id,actividad_id,fecha_realizacion)
 
 go
 create table PagoCuota(
-
 	ID int identity not null,
 	nino_id int not null,
 	reunion_id int not null,

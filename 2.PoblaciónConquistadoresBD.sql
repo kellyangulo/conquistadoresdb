@@ -1957,7 +1957,6 @@ select * from Ocupacion
 
 ---------------------------LLENANDO LA TABLA PADRE-------------------------------
 --select * from padre
--- Esta la editó kelly --
 --select * from Ocupacion
 insert into padre(padre_id,Ocupacion_ID)
 values(101,1)
@@ -4831,6 +4830,5 @@ select * from ninoClub
 -------------------------LLENANDO LA TABLA NIÑO INVESTIDURA----------------------------
 select * from Niño_Investidura
 select * from EspecialidadActividad ea inner join actividad a on a.id = ea.actividad_id inner join especialidad k on k.id = ea.especialidad_id 
-
-insert into Niño_Investidura (nino_id,clase_id)
-values(,)
+--insert into Niño_Investidura (nino_id,clase_id)
+--values(,)
