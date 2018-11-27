@@ -3,7 +3,7 @@ GO
 ------------------------------------------- TRIGGERS -------------------------------------------
 
 --1.TRIGGER PARA GUARDAR LOS NIÑOS MÁS CUMPLIDOS
-create trigger NiñoMasCumplido on ReunionNino for insert
+create trigger TG_NiñoMasCumplido on ReunionNino for insert
 as  
 	declare @NiñoID int
 	declare @ReunionID int
@@ -11,14 +11,14 @@ as
 	select @NiñoID=nino_id,@ReunionID=reunion_id from inserted 
 
 	if(@NiñoID)  in (select nino_id from ReunionNino where puntualidad = 1 and pulcritud_id = 1 and tarea = 1 and asitencia = 1)
-		insert into NiñoCumplido(nino_id,reunion_id) values(@NiñoID,@ReunionID) 
+		insert into MasCumplido(nino_id,reunion_id) values(@NiñoID,@ReunionID) 
 
 go
---select * from NiñoMasCumplido
+--select * from MasCumplido
 go
 
 --2.TRIGGER PARA AGREGAR LOS NIÑOS INSERTADOS EN LA TABLA "nino" A LA VISTA "Niño_View"
-create trigger AgregaNiñoVista on nino for insert
+create trigger TG_AgregaNiñoVista on nino for insert
 as  
 	declare @Niño int
 	declare @Estatura tinyint
@@ -40,7 +40,7 @@ go
 go
 
 --3.TRIGGER PARA MOSTRAR LOS NIÑOS QUE YA PUEDEN INVESTIRSE DE LA CLASE QUE CURSAN
-create trigger Investidura on ninoActividad for insert
+create trigger TG_Investidura on ninoActividad for insert
 as
 	declare @NiñoID int
 	declare @IDClase int
@@ -65,4 +65,3 @@ as
 go
 --select * from Niño_Investidura
 go
-

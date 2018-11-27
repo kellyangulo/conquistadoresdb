@@ -435,22 +435,22 @@ alter table Niño_Investidura
 add constraint FK_Niño_Investidura_clase foreign key (clase_id) references clase(id)
 
 alter table Niño_Investidura
-add constraint UQ_Niño_Investidura unique (nino_id,clase_id)
+add constraint UQ_Investidura unique (nino_id,clase_id)
 
 go
 
-create table NiñoCumplido(
+create table MasCumplido(
 	nino_id int not null,
 	reunion_id int not null
 )
 go
 
-alter table NiñoCumplido
-add constraint FK_Niño_NiñoCumplido foreign key (nino_id) references nino (nino_id)
+alter table MasCumplido
+add constraint FK_Niño_MasCumplido foreign key (nino_id) references nino (nino_id)
 
-alter table NiñoCumplido
-add constraint FK_Reunin_NiñoCumplido foreign key (reunion_id) references Reunion(ID)
+alter table MasCumplido
+add constraint FK_Reunin_MasCumplido foreign key (reunion_id) references Reunion(ID)
 
-alter table NiñoCumplido
-add constraint UQ_Niño_NiñoCumplido unique (nino_id,reunion_id)
+alter table MasCumplido
+add constraint UQ_MasCumplido unique (nino_id,reunion_id)
 
