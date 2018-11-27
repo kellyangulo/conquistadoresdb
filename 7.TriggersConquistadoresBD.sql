@@ -3,7 +3,7 @@ GO
 ------------------------------------------- TRIGGERS -------------------------------------------
 
 --1.TRIGGER PARA GUARDAR LOS NIÑOS MÁS CUMPLIDOS
-create trigger MasCumplido on ReunionNino for insert
+create trigger NiñoMasCumplido on ReunionNino for insert
 as  
 	declare @NiñoID int
 	declare @ReunionID int
@@ -13,18 +13,41 @@ as
 	if(@NiñoID)  in (select nino_id from ReunionNino where puntualidad = 1 and pulcritud_id = 1 and tarea = 1 and asitencia = 1)
 		insert into NiñoCumplido(nino_id,reunion_id) values(@NiñoID,@ReunionID) 
 
---select * from NiñoCumplido
+go
+--select * from NiñoMasCumplido
 go
 
---2.TRIGGER PARA MOSTRAR LOS NIÑOS QUE YA PUEDEN INVESTIRSE DE LA CLASE QUE CURSAN
+--2.TRIGGER PARA AGREGAR LOS NIÑOS INSERTADOS EN LA TABLA "nino" A LA VISTA "Niño_View"
+create trigger AgregaNiñoVista on nino for insert
+as  
+	declare @Niño int
+	declare @Estatura tinyint
+	declare @Peso tinyint
+	declare @Fecha date
+	declare @Edad int
+	declare @Nombre varchar
+
+	select @Niño=nino_id, @Estatura=estatura, @Peso=peso, @Fecha=fecha_nacimiento from inserted 
+	
+	select @Nombre=p.nombre+' '+p.apellidos, @Edad=DATEDIFF(yy,@Fecha,GETDATE()) from nino n
+	inner join persona p on n.nino_id = p.id 
+	where nino_id=@Niño
+
+	insert into Niño_View(Niño,Estatura,Peso,Edad)  values(@Nombre,@Estatura,@Peso,@Edad)
+
+go
+--select * from Niño_View 
+go
+
+--3.TRIGGER PARA MOSTRAR LOS NIÑOS QUE YA PUEDEN INVESTIRSE DE LA CLASE QUE CURSAN
 create trigger Investidura on ninoActividad for insert
 as
 	declare @NiñoID int
 	declare @IDClase int
-	select @Niño=nino_id,@IDClase=clase_id from inserted i inner join ninoClase n on i.nino_id=n.nino_id
 
-	if (@Niño) 
-	in( select actividad_id from EspecialidadActividad ea 
+	select @Niño=i.nino_id,@IDClase=clase_id from inserted i inner join ninoClase n on i.nino_id=n.nino_id
+
+		select actividad_id from EspecialidadActividad ea 
 		inner join actividad a on a.id = ea.actividad_id 
 		inner join especialidad k on k.id = ea.especialidad_id 
 		inner join clase c on c.id=k.clase_id
@@ -33,32 +56,13 @@ as
 		select actividad_id from clase cl
 		inner join claseActividad ca on cl.id = ca.clase_id
 		inner join actividad a on a.id = ca.actividad_id
-		where cl.id=@IDClase)
+		where cl.id=@IDClase
 
-	exec RequisitosInvestidura @IDClase
+	--exec RequisitosInvestidura @IDClase
 
 	insert into Niño_Investidura(nino_id,clase_id) values (@NiñoID,@IDClase)
 
+go
 --select * from Niño_Investidura
 go
 
---3.TRIGGER PARA 
-create trigger EmpleadoVista on trabajador for insert
-as  
-	declare @EmpleadoID int
-	declare @Tipo int
-	declare @Estatus bit
-
-	select @EmpleadoID=trabajador_id, @Estatus=estatus, @Tipo=tipoEmp_id from inserted 
-	if(@Estatus=1) 
-	begin
-	 select p.nombre+' '+p.apellidos as [Trabajador], ti.nombre as [Puesto], c.nombre as [Club de pertenecia] from trabajador t
-	 inner join persona p on t.trabajador_id = p.id 
-	 inner join tipoEmpleado ti on t.tipoEmp_id = ti.id
-	 inner join HistorialTrabajador h on h.trabajador_id = t.trabajador_id
-	 inner join club c on c.id = h.club_id
-	where  estatus=1
-	end
-	insert into NiñoCumplido(nino_id,reunion_id) values(@NiñoID,@ReunionID) 
-
-	select * from trabajador
