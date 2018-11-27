@@ -3255,6 +3255,7 @@ values(299,19,1,1,1,2,99)
 insert into ReunionNino(nino_id,reunion_id,asitencia,puntualidad,tarea,pulcritud_id,PagoCuotaID)
 values(300,20,1,0,0,2,100)
 
+
 select * from ReunionNino
 
 ---------------------------LLENANDO LA TABLA NIÑO ACTIVIDAD--------------------------

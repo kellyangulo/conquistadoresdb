@@ -294,7 +294,7 @@ create table ReunionNino(
 	pulcritud_id tinyint,
 	tarea bit, 
 	asitencia bit,
-	PagoCuotaID int
+	PagoCuotaID int,
 	constraint FK_ReunionNino_nino foreign key (nino_id) references nino (nino_id),
 	constraint FK_ReunionNinoID foreign key (reunion_id) references Reunion(ID),
 	constraint FK_PulcritudIDn foreign key (pulcritud_id) references Pulcritud (ID)
@@ -436,3 +436,21 @@ add constraint FK_Niño_Investidura_clase foreign key (clase_id) references clase
 
 alter table Niño_Investidura
 add constraint UQ_Niño_Investidura unique (nino_id,clase_id)
+
+go
+
+create table NiñoCumplido(
+	nino_id int not null,
+	reunion_id int not null
+)
+go
+
+alter table NiñoCumplido
+add constraint FK_Niño_NiñoCumplido foreign key (nino_id) references nino (nino_id)
+
+alter table NiñoCumplido
+add constraint FK_Reunin_NiñoCumplido foreign key (reunion_id) references Reunion(ID)
+
+alter table NiñoCumplido
+add constraint UQ_Niño_NiñoCumplido unique (nino_id,reunion_id)
+

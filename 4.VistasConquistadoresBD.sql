@@ -9,7 +9,7 @@ inner join persona p on t.trabajador_id = p.id
 inner join tipoEmpleado ti on t.tipoEmp_id = ti.id
 inner join HistorialTrabajador h on h.trabajador_id = t.trabajador_id
 inner join club c on c.id = h.club_id
-where  estatus=1
+where  estatus=1 
 GO
 select * from Empleado_View 
 GO
