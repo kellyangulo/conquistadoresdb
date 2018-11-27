@@ -293,7 +293,7 @@ create table ReunionNino(
 	puntualidad bit,
 	pulcritud_id tinyint,
 	tarea bit, 
-	asitencia bit,
+	asistencia bit,
 	PagoCuotaID int,
 	constraint FK_ReunionNino_nino foreign key (nino_id) references nino (nino_id),
 	constraint FK_ReunionNinoID foreign key (reunion_id) references Reunion(ID),
@@ -424,7 +424,7 @@ add constraint UQ_ninoClub unique (nino_id,club_id,fecha)
 go
 create table Niño_Investidura(
 	nino_id int not null,
-	clase_id int not null
+	clase_id int not null 
 )
 go
 

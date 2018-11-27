@@ -283,7 +283,7 @@ GO
 select p.nombre+' '+p.apellidos as  [Niños] from ReunionNino r
 inner join nino n on n.nino_id = r.nino_id
 inner join persona p on p.id = n.nino_id
-where r.reunion_id = 1 and r.puntualidad = 1 and r.pulcritud_id = 1 and r.tarea = 1 and r.asitencia = 1
+where r.reunion_id = 1 and r.puntualidad = 1 and r.pulcritud_id = 1 and r.tarea = 1 and r.asistencia = 1
 
 GO
 
@@ -323,7 +323,7 @@ GO
 select r.reunion_id as [Reunion] , p.nombre+' '+p.apellidos as  [Niños] from ReunionNino r 
 inner join nino n on n.nino_id = r.nino_id
 inner join persona p on p.id = n.nino_id
-where r.puntualidad = 1 and r.pulcritud_id = 1 and r.tarea = 1 and r.asitencia = 1
+where r.puntualidad = 1 and r.pulcritud_id = 1 and r.tarea = 1 and r.asistencia = 1
 order by r.reunion_id 
 
 GO

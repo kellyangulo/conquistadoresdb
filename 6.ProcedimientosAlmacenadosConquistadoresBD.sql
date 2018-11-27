@@ -2,7 +2,7 @@ use ConquistadoresBD
 GO
 ------------------------------------------- PROCEDIMIENTOS ALMACENADOS -------------------------------------------
 --1.PROCEDIMIENTO ALMACENADO PARA AGREGAR PERSONAS
-create proc InsetarPersona(
+create proc InsertarPersona(
 	@Nombre nvarchar(25),
 	@Apellidos nvarchar(50),
 	@Sexo bit --0: HOMBRE , 1: MUJER
@@ -10,7 +10,7 @@ create proc InsetarPersona(
 values(@Nombre,@Apellidos,@Sexo)
 GO
 --select * from persona
---exec InsetarPersona 'CACA','HUATE','1'
+--exec InsertarPersona 'CACA','HUATE','1'
 
 ----PARA PROBAR EL SP 5
 --INSERT INTO trabajador(trabajador_id,estatus,tipoEmp_id)
@@ -41,8 +41,11 @@ GO
 --3.PROCEDIMIENTO ALMACENADO PARA MOSTRAR LOS REQUISITOS PARA INVESTIRTE DE UNA CLASE EN PARTICULAR
 create proc RequisitosInvestidura(
 	@IDClase int
-)as IF @IDClase in (select id from clase )
+)as 
+	declare @Num int
+IF @IDClase in (select id from clase ) 
 	begin
+		select @Num=count(*)from(
 		select a.id as [Actividad] from EspecialidadActividad ea 
 		inner join actividad a on a.id = ea.actividad_id 
 		inner join especialidad k on k.id = ea.especialidad_id 
@@ -52,7 +55,8 @@ create proc RequisitosInvestidura(
 		select  a.id as [Actividad] from clase cl
 		inner join claseActividad ca on cl.id = ca.clase_id
 		inner join actividad a on a.id = ca.actividad_id
-		where cl.id=@IDClase
+		where cl.id=@IDClase) caca
+			return @Num
 	end
 ELSE
 	print 'El ID ingresado no es perteneciente a ninguna de las clases existentes'
@@ -67,7 +71,7 @@ create proc ControlNiño(
 )as IF @IDNiño in (select nino_id from ReunionNino)
 	begin
 		select c.reunion_id as [Reunion] , p.nombre+' '+p.apellidos as  [Niño], r.Fecha as[Fecha Reunio], c.Cantidad as[Cantidad de cuota],
-		a.asitencia as[Asistencia], a.puntualidad as[Puntualidad],a.tarea as[Tarea], pu.Nombre as[Pulcritud] from PagoCuota c 
+		a.asistencia as[Asistencia], a.puntualidad as[Puntualidad],a.tarea as[Tarea], pu.Nombre as[Pulcritud] from PagoCuota c 
 		inner join nino n on n.nino_id = c.nino_id
 		inner join persona p on p.id = n.nino_id 
 		inner join Reunion r on r.ID = c.reunion_id
