@@ -43,13 +43,13 @@ create proc RequisitosInvestidura(
 	@IDClase int
 )as IF @IDClase in (select id from clase )
 	begin
-		select c.nombre as [Clase], a.nombre as [Actividad] from EspecialidadActividad ea 
+		select a.id as [Actividad] from EspecialidadActividad ea 
 		inner join actividad a on a.id = ea.actividad_id 
 		inner join especialidad k on k.id = ea.especialidad_id 
 		inner join clase c on c.id=k.clase_id
 		where c.id=@IDClase
 			union
-		select cl.nombre as [Clase],a.nombre as [Actividad] from clase cl
+		select  a.id as [Actividad] from clase cl
 		inner join claseActividad ca on cl.id = ca.clase_id
 		inner join actividad a on a.id = ca.actividad_id
 		where cl.id=@IDClase
