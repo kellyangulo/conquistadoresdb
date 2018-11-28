@@ -132,7 +132,7 @@ as
 
 	select @Edad=DATEDIFF(yy,@FechaN,GETDATE())
 
-	IF((@Edad) > 10 and (@Edad) < 16)
+	IF((@Edad) >= 10 and (@Edad) <= 16)
 			insert into nino (nino_id,estatura,peso,padre_id,fecha_nacimiento) values(@NiñoID,@Estatura,@Peso,@Papa,@FechaN)
 		 ELSE
 			print 'El niño no se pudo insertar en la tabla por que la edad no estaba en el rango'
@@ -141,31 +141,5 @@ GO
 ----exec InsertarPersona 'Hola','Lu','0'
 --insert into nino(nino_id,estatura,peso,padre_id,fecha_nacimiento)values(301,156,55,166,'07/11/1999')
 --select * from nino where nino_id=
-
-GO
-
---5.TRIGGER PARA VERIFICAR QUE LA EDAD DEL NIÑO clase 
-create trigger TG_RangoEdadClase on ninoClase for insert
-as
-	declare @NiñoID int 
-	declare @Clase int
-	declare @FechaN date
-	declare @Edad int
-	declare @ClaseR int
-	declare @CamC int
-
-	select @NiñoID=i.nino_id,@Clase=i.clase_id,@FechaN=n.fecha_nacimiento from inserted i inner join nino n on n.nino_id=i.nino_id
-	select @Edad=DATEDIFF(yy,@FechaN,GETDATE())
-	select @ClaseR=Rango_Edad from clase
-	
-	IF((@Edad) not in (@ClaseR))
-		  begin
-			select @CamC=id from clase where Rango_Edad=@Edad
-			insert into  ninoClase (nino_id,clase_id,fecha) values(@NiñoID,@CamC,GETDATE())
-		  end
-
-GO
-
---Select * from ninoClase
 
 GO
