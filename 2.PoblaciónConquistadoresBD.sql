@@ -1,5 +1,5 @@
 ﻿use ConquistadoresBD
-go
+GO
 
  -----------------------LLENANDO LA TABLA CLUB----------------------------
  --select * from Club
@@ -23,8 +23,10 @@ go
  values('Roco club','La Rambla','Génova','10892','Un dinosaurio')
  insert into Club (nombre,calle,colonia,codigo_postal,logo_tipo)
  values('Snow club','Rotonda','El barrio','60249','Un mono de nieve')
+
  select * from Club
 
+GO
  ---------------------LLENANDO LA TABLA CAMPAMENTO------------------------
  --select * from campamento
 --CAMPAMENTO PARA CHICAS
@@ -72,6 +74,7 @@ insert into campamento(nombre,fecha,calle,colonia)
 
  select * from campamento
 
+ GO
 ---------------------LLENANDO LA TABLA TIPO EMPLEADO------------------------
 --select * from tipoEmpleado
  insert into tipoEmpleado(nombre)
@@ -86,8 +89,10 @@ insert into campamento(nombre,fecha,calle,colonia)
  values('Instructor')
  insert into tipoEmpleado(nombre)
  values('Consejero')
+
  select * from tipoEmpleado
 
+ GO
 --------------------------LLENANDO LA TABLA CLASE------------------------------
 --select * from clase
  insert into clase(nombre,color,Rango_Edad)
@@ -107,7 +112,7 @@ insert into campamento(nombre,fecha,calle,colonia)
 
  select * from clase
 
- 
+ GO
  --------------------LLENANDO LA TABLA ESPECIALIDAD-----------------------
 --select * from especialidad
  insert into especialidad(nombre,descrip,clase_id)
@@ -124,11 +129,10 @@ insert into campamento(nombre,fecha,calle,colonia)
  values('Seguridad','Capacidad de defensa propia',6)
  insert into especialidad(nombre,descrip,clase_id)
  values('Primeros auxilios','Dominio en la salud',7)
- 
 
  select * from especialidad
  
-
+ GO
  ------------------------LLENANDO LA TABLA ACTIVIDAD---------------------------
  --select * from actividad
   ------------- CLASE 1
@@ -285,8 +289,7 @@ insert into campamento(nombre,fecha,calle,colonia)
  
  select * from actividad
 
-
-
+GO
 ------------------------LLENANDO LA TABLA PERSONA---------------------------
  --select * from persona where id > 100
  --        FEMENINO 1, MASCULINO 0
@@ -895,6 +898,7 @@ insert into persona(nombre,apellidos,sexo) --PADRE
 
  select * from persona
 
+ GO
  ------------------------LLENANDO LA TABLA ALERGIA---------------------------
  --select * from alergia
  insert into alergia(descrip)
@@ -921,8 +925,10 @@ insert into persona(nombre,apellidos,sexo) --PADRE
  values('Alergia al chocolate')
  insert into alergia(descrip)
  values('Alergia a las almendras')
+
  select * from alergia
 
+ GO
  ------------------------LLENANDO LA TABLA UNIDAD---------------------------
  --select * from unidad
  --select * from club
@@ -967,8 +973,10 @@ insert into persona(nombre,apellidos,sexo) --PADRE
  values(10,'Persevera y triunfaras','R','Un caballito de mar',1)
  insert into unidad(club_id,lema,nombre,logo,genero)
  values(10,'Persevera y triunfaras','S','Una catarina',0)
+
  select * from unidad
 
+ GO
  -------------------------LLENANDO LA TABLA CAMPAMENTOUNIDAD----------------------------
  --select * from campamentoUnidad
  --select * from unidad where genero like 1 --UNO ES FEMENINO
@@ -1193,8 +1201,10 @@ insert into persona(nombre,apellidos,sexo) --PADRE
  values(18,20)
  insert into campamentoUnidad(unidad_id, campamento_id) --MASCULINO
  values(20,20)
+
  select * from campamentoUnidad
 
+ GO
 ------------------------LLENANDO LA TABLA CLUBCLASE---------------------------
 --select * from clubClase
 --select * from club
@@ -1342,7 +1352,7 @@ values(10,7)
 
 select * from clubClase
 
-
+GO
 ------------------------LLENANDO LA TABLA TRABAJADOR---------------------------
 --select * from trabajador
 --select id from persona 
@@ -1549,8 +1559,10 @@ insert into trabajador(trabajador_id,tipoEmp_id,estatus)
 values(99,5,1)
 insert into trabajador(trabajador_id,tipoEmp_id,estatus)
 values(100,5,1)
+
 select * from trabajador
 
+GO
 ------------------------LLENANDO LA TABLA ESPECIALIDADTRABAJADOR---------------------------
 --select * from HistorialTrabajador
 --select * from especialidad
@@ -1756,9 +1768,10 @@ insert into EspecialidadTrabajador(trabajador_id,especialidad_id)
 values(100,6)
 insert into EspecialidadTrabajador(trabajador_id,especialidad_id)
 values(100,7)
+
 select * from EspecialidadTrabajador
 
-
+GO
 ------------------------LLENANDO LA TABLA CLASEACTIVIDAD---------------------------
 --select * from claseActividad
 --select * from actividad
@@ -1850,6 +1863,7 @@ values(7,58)
 
 select * from claseActividad
 
+GO
 ------------------------LLENANDO LA TABLA ESPECIALIDAD ACTIVIDAD---------------------------
 --select * from EspecialidadActividad
 --select id,nombre from especialidad
@@ -1910,6 +1924,7 @@ values(7,61)
 
 select * from EspecialidadActividad
 
+GO
 ---------------------------LLENANDO LA TABLA OCUPACION-------------------------------
 --select * from Ocupacion
 insert into Ocupacion(Nombre)
@@ -1955,6 +1970,7 @@ values ('Otro')
 
 select * from Ocupacion
 
+GO
 ---------------------------LLENANDO LA TABLA PADRE-------------------------------
 --select * from padre
 --select * from Ocupacion
@@ -2161,6 +2177,7 @@ values(200, 4)
 
 select * from padre
 
+GO
 -------------------------LLENANDO LA TABLA TELEFONO PADRE----------------------------
 --select * from telefonoPadre
 insert into telefonoPadre(padre_id,numero)
@@ -2366,6 +2383,7 @@ values(200,'7777189998')
 
 select * from telefonoPadre
 
+GO
 ---------------------------LLENANDO LA TABLA NIÑO-------------------------------
 --select * from niño
 --select id,nombre from persona where id > 200
@@ -2574,6 +2592,7 @@ values(300,166,54,200,'07/13/2007')
 
 select * from nino
 
+GO
 --------------------------LLENANDO LA TABLA ALERGIA NIÑO-------------------------------
 --select * from alergiaNino
 --select * from nino
@@ -2790,6 +2809,7 @@ values(300, 1)
 
 select * from alergiaNino
 
+GO
 ---------------------------LLENANDO LA TABLA REUNION -------------------------------
 --select * from Reunion
 insert into Reunion(Fecha,Cuota)
@@ -2835,6 +2855,7 @@ values('10/01/2018',150)
 
 select * from Reunion
 
+GO
 ---------------------------LLENANDO LA TABLA PULCRITUD-------------------------------
 --select * from Pulcritud
 insert into Pulcritud(Nombre)
@@ -2843,8 +2864,10 @@ insert into Pulcritud(Nombre)
 values('Malo')
 insert into Pulcritud(Nombre)
 values('Regular')
+
 select * from Pulcritud
 
+GO
 ---------------------------LLENANDO LA TABLA PAGO CUOTA--------------------------
 --select * from PagoCuota
 select * from Reunion
@@ -3048,8 +3071,10 @@ insert into PagoCuota(nino_id,reunion_id,FechaPago,Cantidad)
 values(299,19,'08/01/2018',150)
 insert into PagoCuota(nino_id,reunion_id,FechaPago,Cantidad)
 values(300,20,'10/01/2018',150)
+
 select * from PagoCuota
 
+GO
 ---------------------------LLENANDO LA TABLA REUNION NIÑO-------------------------------
 --select * from ReunionNino
 --select * from ninoUnidad
@@ -3255,9 +3280,9 @@ values(299,19,1,1,1,2,99)
 insert into ReunionNino(nino_id,reunion_id,asistencia,puntualidad,tarea,pulcritud_id,PagoCuotaID)
 values(300,20,1,0,0,2,100)
 
-
 select * from ReunionNino
 
+GO
 ---------------------------LLENANDO LA TABLA NIÑO CLASE-------------------------------
 --select * from ninoClase
 select * from nino
@@ -3461,8 +3486,10 @@ insert into ninoClase(nino_id,clase_id,fecha)
 values(299,1,'01/01/2018')
 insert into ninoClase(nino_id,clase_id,fecha)
 values(300,2,'01/01/2018')
+
 select * from ninoClase
 
+GO
 ---------------------------LLENANDO LA TABLA NIÑO ACTIVIDAD--------------------------
 --select * from ninoActividad
 --select nino_id,clase_id from nino
@@ -4008,6 +4035,7 @@ values(300,16,'05/08/2018')
 
 select * from ninoActividad
 
+GO
 ---------------------------LLENANDO LA TABLA NIÑO UNIDAD-------------------------------
 --select * from ninoUnidad
 insert into ninoUnidad(nino_id,unidad_id,fecha)
@@ -4213,7 +4241,7 @@ values(300,20,'10/10/2017')
 
 select * from ninoUnidad
 
-
+GO
 ------------------------LLENANDO LA TABLA HISTORIAL TRABAJADOR----------------------------
 --select * from HistorialTrabajador
 insert into HistorialTrabajador(trabajador_id,club_id,fecha)
@@ -4419,6 +4447,7 @@ values(100,10,'08/10/2017')
 
 select * from HistorialTrabajador
 
+GO
 -------------------------LLENANDO LA TABLA PADRE NIÑO----------------------------
 --select * from Padre_Nino
 insert into Padre_Nino(IDPapa,IDNino)
@@ -4624,6 +4653,7 @@ values(200,300)
 
 select * from Padre_Nino
 
+GO
 -------------------------LLENANDO LA TABLA NIÑO CLUB----------------------------
 --select * from ninoClub
 insert into ninoClub (nino_id,club_id,fecha)
@@ -4828,3 +4858,5 @@ insert into ninoClub (nino_id,club_id,fecha)
 values(300,10,'10/10/2017')
 
 select * from ninoClub
+
+GO

@@ -454,3 +454,19 @@ add constraint FK_Reunin_MasCumplido foreign key (reunion_id) references Reunion
 alter table MasCumplido
 add constraint UQ_MasCumplido unique (nino_id,reunion_id)
 
+go
+
+create table NiñoEspecialidadCumplida(
+	NiñoID int not null,
+	EspecialidadID int not null
+)
+go
+
+alter table  NiñoEspecialidadCumplida
+add constraint FK_Niño_NiñoEspecialidadCumplida foreign key (NiñoID) references nino (nino_id)
+
+alter table  NiñoEspecialidadCumplida
+add constraint FK_Especialidad_NiñoEspecialidadCumplida foreign key (EspecialidadID) references especialidad (id)
+
+alter table  NiñoEspecialidadCumplida
+add constraint UQ_NiñoEspecialidadCumplida unique (NiñoID,EspecialidadID)

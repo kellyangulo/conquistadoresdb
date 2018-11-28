@@ -38,7 +38,7 @@ GO
 ----------------------------INFORMACIÓN DE TODOS LOS INSTRUCTORES PARA CALAR EL SP 2-------------------------------------
 --select * from persona p inner join trabajador t on p.id=t.trabajador_id inner join tipoEmpleado e on e.id= t.tipoEmp_id inner join EspecialidadTrabajador ea on ea.trabajador_id=t.trabajador_id inner join especialidad es on es.id= ea.especialidad_id
 
---3.PROCEDIMIENTO ALMACENADO PARA MOSTRAR LOS REQUISITOS PARA INVESTIRTE DE UNA CLASE EN PARTICULAR
+--3.PROCEDIMIENTO ALMACENADO PARA DAR LOS CANTIDAD DE REQUISITOS PARA INVESTIRTE DE UNA CLASE EN PARTICULAR (Se usa en trigger)
 create proc RequisitosInvestidura(
 	@IDClase int
 )as 
@@ -65,7 +65,53 @@ GO
 --exec RequisitosInvestidura '7'
 GO
 
---4.PROCEDIMIENTO ALMACENADO PARA MOSTRAR EL CONTROL DE LOS DATOS DE UN NIÑO EN LAS REUNIONES A LAS QUE A ASISTIDO
+--4.PROCEDIMIENTO ALMACENADO PARA DAR LOS CANTIDAD DE ACTIVIDADES DE UNA ESPECIALIDAD (Se usa en trigger)
+create proc ActividadEspecialidad(
+	@IDClase int
+)as 
+	declare @Num int
+IF @IDClase in (select id from clase ) 
+	begin
+		select @Num=count (a.id) from EspecialidadActividad ea 
+		inner join actividad a on a.id = ea.actividad_id 
+		inner join especialidad k on k.id = ea.especialidad_id 
+		inner join clase c on c.id=k.clase_id
+		where c.id=@IDClase
+		return @Num
+	end
+ELSE
+	print 'El ID ingresado no es perteneciente a ninguna de las clases existentes'
+
+GO
+--exec ActividadEspecialidad '1'
+GO
+
+--5.PROCEDIMIENTO ALMACENADO PARA LA CANTIDAD DE ACTIVIDADES QUE YA REALIZO UN NIÑO DE UNA ESPECIALIDAD (Se usa en trigger)
+create proc ActividadesRealizadasEspe(
+	@IDClase int, 
+	@IDNiño int
+)as 
+	declare @Num int
+IF @IDClase in (select id from clase ) and @IDNiño  in (select nino_id from nino)
+	begin
+		select  @Num=count(*) from 
+		(select a.id as [Actividad Especialidad] from EspecialidadActividad ea 
+		inner join actividad a on a.id = ea.actividad_id 
+		inner join especialidad k on k.id = ea.especialidad_id 
+		inner join clase c on c.id=k.clase_id
+		where c.id=@IDClase
+			intersect
+		select actividad_id from ninoactividad where nino_id=@IDNiño) Done
+		return @Num
+	end
+ELSE
+	print 'Alguno de los ID ingresados no pertenece a la clase establecida'
+
+GO
+--exec ActividadesRealizadasEspe '5','205'
+GO
+
+--6.PROCEDIMIENTO ALMACENADO PARA MOSTRAR EL CONTROL DE LOS DATOS DE UN NIÑO EN LAS REUNIONES A LAS QUE A ASISTIDO
 create proc ControlNiño(
 	@IDNiño int
 )as IF @IDNiño in (select nino_id from ReunionNino)
@@ -93,7 +139,7 @@ GO
 ---------NIÑOS QUE NO HAN ASISTIDO A NINGUNA REUNION
 --select nino_id from nino except select nino_id from ReunionNino
 
---5.PROCEDIMIENTO ALMACENADO PARA ELIMINA UN EMPLEADO QUE YA NO ESTAN ACTIVOS
+--7.PROCEDIMIENTO ALMACENADO PARA ELIMINA UN EMPLEADO QUE YA NO ESTAN ACTIVOS
 create proc EliminaEmpleado(
 	@IDEmpleado int
 )as IF @IDEmpleado in (select trabajador_id  from trabajador where estatus=0)
