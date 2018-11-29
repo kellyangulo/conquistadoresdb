@@ -138,8 +138,9 @@ as
 			print 'El niño no se pudo insertar en la tabla Niño por que la edad no estaba en el rango de aceptacion'
 GO
 
+---------------------PRUEBA TRIGGER TG_NiñoEdad
 ----exec InsertarPersona 'Uriel','Buapo','1'
---insert into nino(nino_id,estatura,peso,padre_id,fecha_nacimiento)values(301,156,55,166,'//1999')
+--insert into nino(nino_id,estatura,peso,padre_id,fecha_nacimiento)values(301,156,55,166,'11/03/1999')
 --select * from nino where nino_id=
 
 GO
@@ -164,7 +165,37 @@ as
 	 end
 GO
 
+
+---------------------PRUEBA TRIGGER TG_NiñoRangoEdad
 ----exec InsertarPersona 'Hola','Lu','0'
---insert into nino(nino_id,estatura,peso,padre_id,fecha_nacimiento)values(301,156,55,166,'11/24/2002')
---select * from nino where nino_id=
---insert into ninoClase (nino_id,clase_id,fecha) values (,5,GETDATE())
+--insert into nino(nino_id,estatura,peso,padre_id,fecha_nacimiento)values(3?,156,55,166,'11/24/2002')
+--select * from nino where nino_id=?
+--insert into ninoClase (nino_id,clase_id,fecha) values (?,1,GETDATE())
+
+GO
+
+--7.TRIGGER PARA VERIFICAR QUE LOS NIÑOS INGRESADOS EN UNA UNIDAD SEAN DEL MISMO SEXO; 1=MUJER, 0=HOMBRE
+create trigger TG_NiñoGeneroUnidad on ninoUnidad for insert
+as
+	declare @NiñoID int 
+	declare @GeneroU bit
+	declare @GeneroN bit
+	declare @UnidadID int
+
+	select @NiñoID=i.nino_id,@UnidadID=i.unidad_id,@GeneroN=n.sexo,@GeneroU=u.genero from inserted i inner join persona n on n.id=i.nino_id inner join unidad u on u.id=i.unidad_id
+	
+	IF((@GeneroN) not in (@GeneroU))
+	 begin
+		delete from ninoUnidad where nino_id=@NiñoID and unidad_id=@UnidadID
+		print 'No se puede ingresar al niño en esta unidad ya que no es del sexo perteneciente'
+	 end
+GO
+
+---------------------PRUEBA TRIGGER TG_NiñoGeneroUnidad
+----exec InsertarPersona 'YaNoSeQuePoner','xdxd','0'
+--insert into nino(nino_id,estatura,peso,padre_id,fecha_nacimiento)values(?,156,55,166,'11/24/2002')
+--select * from unidad where genero=1
+--insert into ninoUnidad (nino_id,unidad_id,fecha) values(?,3,GETDATE())
+--select * from ninoUnidad where nino_id=?
+
+GO
