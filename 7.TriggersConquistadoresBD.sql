@@ -135,11 +135,36 @@ as
 	IF((@Edad) >= 10 and (@Edad) <= 16)
 			insert into nino (nino_id,estatura,peso,padre_id,fecha_nacimiento) values(@NiñoID,@Estatura,@Peso,@Papa,@FechaN)
 		 ELSE
-			print 'El niño no se pudo insertar en la tabla por que la edad no estaba en el rango'
+			print 'El niño no se pudo insertar en la tabla Niño por que la edad no estaba en el rango de aceptacion'
 GO
 
-----exec InsertarPersona 'Hola','Lu','0'
---insert into nino(nino_id,estatura,peso,padre_id,fecha_nacimiento)values(301,156,55,166,'07/11/1999')
+----exec InsertarPersona 'Uriel','Buapo','1'
+--insert into nino(nino_id,estatura,peso,padre_id,fecha_nacimiento)values(301,156,55,166,'//1999')
 --select * from nino where nino_id=
 
 GO
+
+--6.TRIGGER PARA VERIFICAR QUE LA EDAD DEL NIÑO ENTRE EN EL RANGO DE ACEPTACION ESTABLECIDO DE EDAD EN LA CLASE
+create trigger TG_NiñoRangoEdad on ninoClase for insert
+as
+	declare @NiñoID int 
+	declare @Clase int
+	declare @FechaN date
+	declare @Edad int
+	declare @ClaseR int
+
+	select @NiñoID=i.nino_id,@Clase=i.clase_id,@FechaN=n.fecha_nacimiento from inserted i inner join nino n on n.nino_id=i.nino_id
+	select @Edad=DATEDIFF(yy,@FechaN,GETDATE())
+	select @ClaseR=Rango_Edad from clase where id=@Clase
+	
+	IF((@Edad) not in (@ClaseR))
+	 begin
+		delete from ninoClase where  nino_id=@NiñoID and clase_id=@Clase
+		print 'No se puedo ingresar al niño en la clase ya que no tiene el rango de edad establecido'
+	 end
+GO
+
+----exec InsertarPersona 'Hola','Lu','0'
+--insert into nino(nino_id,estatura,peso,padre_id,fecha_nacimiento)values(301,156,55,166,'11/24/2002')
+--select * from nino where nino_id=
+--insert into ninoClase (nino_id,clase_id,fecha) values (,5,GETDATE())
