@@ -187,7 +187,7 @@ as
 	IF((@GeneroN) not in (@GeneroU))
 	 begin
 		delete from ninoUnidad where nino_id=@NiñoID and unidad_id=@UnidadID
-		print 'No se puede ingresar al niño en esta unidad ya que no es del sexo perteneciente'
+		print 'No se puede ingresar al niño en esta unidad ya que no es del genero perteneciente'
 	 end
 GO
 
@@ -199,3 +199,22 @@ GO
 --select * from ninoUnidad where nino_id=?
 
 GO
+
+--8.TRIGGER PARA VERIFICAR QUE LAS UNIDADES QUE ASISTEN A UN CAMPAMENTO SEAN DEL MISMO GENERO
+create trigger TG_CampamentoUnidad on campamentoUnidad for insert
+as
+	declare @CampamentoID int
+	declare @UnidadID int
+	declare @GeneroC bit
+	declare @GeneroU bit
+
+	select @CampamentoID=i.campamento_id, @UnidadID=i.unidad_id, @GeneroC=c.genero, @GeneroU=u.genero from inserted i 
+	inner join campamento c on c.id=i.campamento_id  inner join unidad u on u.id=i.unidad_id
+	
+	IF((@GeneroU) not in (@GeneroC))
+	 begin
+		delete from campamentoUnidad where  campamento_id=@CampamentoID and unidad_id=@UnidadID
+		print 'La unidad ingresada no puede asistir a ese campamento ya que no es del genero perteneciente'
+	 end
+GO
+--select * from unidad

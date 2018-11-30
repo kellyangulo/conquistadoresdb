@@ -25,6 +25,7 @@ create table campamento(
 	fecha date not null,
 	calle  nvarchar (50) not null,
 	colonia nvarchar (30) not null,
+	Genero bit not null
 	constraint PK_campamento primary key(id)
 )
 go
@@ -68,6 +69,11 @@ create table persona(
 	sexo bit not null,
 	constraint PK_persona primary key(id)
 )
+go
+
+alter table persona
+add constraint UQ_NombrePersona unique (nombre,apellidos)
+
 go
 create table alergia(
 	id int identity,

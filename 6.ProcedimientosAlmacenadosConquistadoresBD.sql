@@ -1,7 +1,7 @@
 use ConquistadoresBD
 GO
 ------------------------------------------- PROCEDIMIENTOS ALMACENADOS -------------------------------------------
---1.PROCEDIMIENTO ALMACENADO PARA AGREGAR PERSONAS
+--1.PROCEDIMIENTO ALMACENADO PARA AGREGAR PERSONAS (Se usa otros SP y prueba de triggers de manera más rapida)
 create proc InsertarPersona(
 	@Nombre nvarchar(25),
 	@Apellidos nvarchar(50),
@@ -151,8 +151,140 @@ ELSE
 		ELSE
 			print 'El ID ingresado no pertenece a ningún empleado'
 	end
+
 GO
 --select trabajador_id  from trabajador 
 --exec EliminaEmpleado '301'
 --select trabajador_id  from trabajador 
+GO
+
+--------------------------------PROCEDIMIENTOS ALMACENADOS PARA LA APLICACIÓN--------------------------------
+--8.PROCEDIMIENTO ALMACENADO PARA ELIMINAR UN NIÑO
+create proc EliminaNiño(
+	@Nombre nvarchar(25),
+	@Apellidos nvarchar(50)
+)as 
+	Declare @NiñoID int
+	select @NiñoID=id from persona where nombre=@Nombre and apellidos=@Apellidos
+
+	IF @NiñoID in (select nino_id from nino)
+	 begin
+		delete from NiñoEspecialidadCumplida where  NiñoID=@NiñoID
+		delete from MasCumplido where  nino_id=@NiñoID
+		delete from Niño_Investidura where  nino_id=@NiñoID
+		delete from ninoClub where  nino_id=@NiñoID
+		delete from Padre_Nino where  IDNino=@NiñoID
+		delete from ninoClase where  nino_id=@NiñoID
+		delete from ninoUnidad where  nino_id=@NiñoID
+		delete from ReunionNino where  nino_id=@NiñoID
+		delete from PagoCuota where  nino_id=@NiñoID
+		delete from ninoActividad where  nino_id=@NiñoID
+		delete from alergiaNino where  nino_id=@NiñoID
+		delete from nino where  nino_id=@NiñoID
+		delete from persona where  id=@NiñoID
+	 end
+	 ELSE
+		print 'El niño que deseas eliminar no se encuentra registrado'
+
+GO
+--select  * from nino inner join persona on nino_id=id where nino_id=205
+--exec EliminaNiño 'Carolina','Lozano Benitez'
+--select  * from nino inner join persona on nino_id=id where nino_id=205
+GO
+
+--9.PROCEDIMIENTO ALMACENADO PARA AGREGAR UN NIÑO
+create proc InsertarNiño(
+	--Datos niño
+	@Nombre nvarchar(25),
+	@Apellidos nvarchar(50),
+	@Sexo bit, --0: HOMBRE , 1: MUJER
+	@Estatura tinyint,
+	@Peso tinyint,
+	@FechaNacimiento date,
+
+	--Datos tutor
+	@NombreT nvarchar(25),
+	@ApellidosT nvarchar(50),
+	@SexoT bit, --0: HOMBRE , 1: MUJER
+	@OcupacionID int
+
+)as 
+	Declare @NiñoID int
+	Declare @TutorID int
+
+	--Para capturar los datos del niño
+	exec InsertarPersona @Nombre,@Apellidos,@Sexo
+	select @NiñoID=id from persona where nombre=@Nombre and apellidos=@Apellidos and sexo=@Sexo
+
+	--Para capturar los datos del tutor
+	exec InsertarPersona @NombreT,@ApellidosT,@SexoT
+	select @TutorID=id from persona where nombre=@NombreT and apellidos=@ApellidosT and sexo=@SexoT
+	
+	--Inserta primero al tutor
+	insert into padre (padre_id,Ocupacion_ID) values(@TutorID,@OcupacionID)
+	insert into nino (nino_id,estatura,peso,padre_id,fecha_nacimiento) values(@NiñoID,@Estatura,@Peso,@TutorID,@FechaNacimiento)
+
+GO
+--select * from Ocupacion
+--exec InsertarNiño 'Carolina','Lozano Benitez','1','160','52','2004-05-11','Hectorin','Lozano','0','4'
+--select * from nino inner join persona on nino_id=id where nombre like 'Carolina' and apellidos like 'Lozano Benitez'
+GO
+
+--10.PROCEDIMIENTO ALMACENADO PARA MODIFICAR LA ESTATURA DE UN NIÑO
+create proc ModificaNiñoEstatura(
+	@Nombre nvarchar(25),
+	@Apellidos nvarchar(50),
+	@Estatura tinyint
+)as 
+	Declare @NiñoID int
+	select @NiñoID=id from persona where nombre=@Nombre and apellidos=@Apellidos
+
+	IF @NiñoID in (select nino_id from nino)
+		update  nino  set estatura=@Estatura where nino_id=@NiñoID
+	ELSE 
+		print 'El niño ingresado no se encuentra registrado'
+
+GO
+--exec ModificaNiñoEstatura 'Carolina','Lozano Benitez','159'
+--select  * from nino inner join persona on nino_id=id where nino_id=205
+GO
+
+--11.PROCEDIMIENTO ALMACENADO PARA MODIFICAR EL PESO DE UN NIÑO
+create proc ModificaNiñoPeso(
+	@Nombre nvarchar(25),
+	@Apellidos nvarchar(50),
+	@Peso tinyint
+)as 
+	Declare @NiñoID int
+
+	select @NiñoID=id from persona where nombre=@Nombre and apellidos=@Apellidos
+
+	IF @NiñoID in (select nino_id from nino)
+		update  nino  set peso=@Peso where nino_id=@NiñoID
+	ELSE 
+		print 'El niño ingresado no se encuentra registrado'
+
+GO
+--exec ModificaNiñoPeso 'Carolina','Lozano Benitez','50'
+--select  * from nino inner join persona on nino_id=id where nino_id=205
+GO
+
+--12.PROCEDIMIENTO ALMACENADO PARA MODIFICAR EL PESO DE UN NIÑO
+create proc ModificaNiñoFechaNacimiento(
+	@Nombre nvarchar(25),
+	@Apellidos nvarchar(50),
+	@FechaNacimiento date
+)as 
+	Declare @NiñoID int
+	select @NiñoID=id from persona where nombre=@Nombre and apellidos=@Apellidos
+	
+	IF @NiñoID in (select nino_id from nino)
+		update  nino  set fecha_nacimiento=@FechaNacimiento where nino_id=@NiñoID
+	ELSE 
+		print 'El niño ingresado no se encuentra registrado'
+
+GO
+--exec ModificaNiñoFechaNacimiento 'Carolina','Lozano Benitez','2005-12-01'
+--select  * from nino inner join persona on nino_id=id where nino_id=205
+GO
 
