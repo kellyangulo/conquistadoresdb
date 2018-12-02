@@ -395,10 +395,10 @@ alter table Padre_Nino
 add constraint FK_Padre_Nino_PapaID Foreign key (IDPapa) references padre (padre_id)
 
 alter table Padre_Nino
-add constraint FK_Padre_Nino_NiñoID Foreign key (IDNino) references nino (nino_id)
+add constraint FK_Padre_Nino_NinoID Foreign key (IDNino) references nino (nino_id)
 
 alter table Padre_Nino
-add constraint UQ_Padre_Niño unique (IDPapa,IDNino)
+add constraint UQ_Padre_Nino unique (IDPapa,IDNino)
 
 go
 create table ninoClub
@@ -422,19 +422,19 @@ alter table ninoClub
 add constraint UQ_ninoClub unique (nino_id,club_id,fecha)
 
 go
-create table Niño_Investidura(
+create table Nino_Investidura(
 	nino_id int not null,
 	clase_id int not null 
 )
 go
 
-alter table Niño_Investidura
-add constraint FK_Niño_Investidura_nino foreign key (nino_id) references nino (nino_id)
+alter table Nino_Investidura
+add constraint FK_Nino_Investidura_nino foreign key (nino_id) references nino (nino_id)
 
-alter table Niño_Investidura
-add constraint FK_Niño_Investidura_clase foreign key (clase_id) references clase(id)
+alter table Nino_Investidura
+add constraint FK_Nino_Investidura_clase foreign key (clase_id) references clase(id)
 
-alter table Niño_Investidura
+alter table Nino_Investidura
 add constraint UQ_Investidura unique (nino_id,clase_id)
 
 go
@@ -446,7 +446,7 @@ create table MasCumplido(
 go
 
 alter table MasCumplido
-add constraint FK_Niño_MasCumplido foreign key (nino_id) references nino (nino_id)
+add constraint FK_Nino_MasCumplido foreign key (nino_id) references nino (nino_id)
 
 alter table MasCumplido
 add constraint FK_Reunin_MasCumplido foreign key (reunion_id) references Reunion(ID)
@@ -456,17 +456,18 @@ add constraint UQ_MasCumplido unique (nino_id,reunion_id)
 
 go
 
-create table NiñoEspecialidadCumplida(
-	NiñoID int not null,
+create table NinoEspecialidadCumplida(
+	NinoID int not null,
 	EspecialidadID int not null
 )
 go
 
-alter table  NiñoEspecialidadCumplida
-add constraint FK_Niño_NiñoEspecialidadCumplida foreign key (NiñoID) references nino (nino_id)
+alter table  NinoEspecialidadCumplida
+add constraint FK_Nino_NinoEspecialidadCumplida foreign key (NinoID) references nino (nino_id)
 
-alter table  NiñoEspecialidadCumplida
-add constraint FK_Especialidad_NiñoEspecialidadCumplida foreign key (EspecialidadID) references especialidad (id)
+alter table  NinoEspecialidadCumplida
+add constraint FK_Especialidad_NinoEspecialidadCumplida foreign key (EspecialidadID) references especialidad (id)
 
-alter table  NiñoEspecialidadCumplida
-add constraint UQ_NiñoEspecialidadCumplida unique (NiñoID,EspecialidadID)
+alter table  NinoEspecialidadCumplida
+add constraint UQ_NinoEspecialidadCumplida unique (NinoID,EspecialidadID)
+
