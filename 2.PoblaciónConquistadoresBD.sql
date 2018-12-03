@@ -1,5 +1,6 @@
 ﻿use ConquistadoresBD
 GO
+
  -----------------------LLENANDO LA TABLA CLUB----------------------------
  --select * from Club
  insert into Club (nombre,calle,colonia,codigo_postal,logo_tipo)

@@ -1,5 +1,6 @@
 use ConquistadoresBD
 GO
+
 ------------------------------------------- VISTAS -------------------------------------------
 
 --1.MOSTRAR EL NOMBRE DE TODOS LOS TRABAJADORES ACTIVOS Y LOS PUESTOS QUE TIENE

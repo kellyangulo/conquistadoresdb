@@ -1,5 +1,6 @@
 use ConquistadoresBD
 GO
+
 ------------------------------------------- TRIGGERS -------------------------------------------
 
 --1.TRIGGER PARA GUARDAR LOS NIÑOS MÁS CUMPLIDOS

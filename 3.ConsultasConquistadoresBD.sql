@@ -1,6 +1,5 @@
 use ConquistadoresBD
 GO
-
 ------------------------------------------------CONSULTAS NO TRIVIALES------------------------------------------------------
  
 --1. MOSTRAR LA ESTATURA PROMEDIO DE NIÑOS DE CADA UNIDAD

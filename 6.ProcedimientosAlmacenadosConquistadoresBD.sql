@@ -1,5 +1,6 @@
 use ConquistadoresBD
 GO
+
 ------------------------------------------- PROCEDIMIENTOS ALMACENADOS -------------------------------------------
 --1.PROCEDIMIENTO ALMACENADO PARA AGREGAR PERSONAS (Se usa otros SP y prueba de triggers de manera más rapida)
 create proc InsertarPersona(

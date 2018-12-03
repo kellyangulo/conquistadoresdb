@@ -1,5 +1,6 @@
 use ConquistadoresBD
 GO
+
 ------------------------------------------- INDEX -------------------------------------------
 create nonclustered index IDX_Niño
 on nino (nino_id)
