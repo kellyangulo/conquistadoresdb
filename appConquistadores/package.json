@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kellyangulo/conquistadoresdb#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "mssql": "^4.3.0",
     "tedious": "^3.0.1"
   }
