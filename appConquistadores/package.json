@@ -1,0 +1,24 @@
+{
+  "name": "conquistadoresdb",
+  "version": "1.0.0",
+  "description": "- Angulo Quiñonez Kelly Anahí | 16171282 | Ing. En Sistemas Computacionales  :turtle: - Reyes Rivera Joel | 17170586 | Ing. En Tecnologías de la Información y Comunicaciones :whale2: - Beltrán Angulo María Cristina | 17170564 | Ing. En Tecnologías de la Información y Comunicaciones :baby_chick:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kellyangulo/conquistadoresdb.git"
+  },
+  "author": "Kelly Angulo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kellyangulo/conquistadoresdb/issues"
+  },
+  "homepage": "https://github.com/kellyangulo/conquistadoresdb#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mssql": "^4.3.0",
+    "tedious": "^3.0.1"
+  }
+}

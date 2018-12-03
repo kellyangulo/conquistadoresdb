@@ -1,15 +1,24 @@
-const Connection = require('tedious').Connection
+var Connection = require('tedious').Connection;
 
-const  config = {
-    server: "localhost",
-    authentication: {
-        type: "default",
-        options: {
-            userName: "SA",
-            password: "Paramore98",
-        }
+var config = {
+    userName: 'sa', // update me
+    password: 'Paramore98', // update me
+    server: 'localhost',
+    options: {
+        database: 'ConquistadoresBD',
+        encrypt: true
     }
-}
+  }
+  var connection = new Connection(config);
 
-const DBConnection = new Connection (config);
-module.exports = DBConnection;
+  connection.on('connect', function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('kiubo prro');
+    }
+  });
+  
+
+  module.exports = connection;
+  
