@@ -20,7 +20,6 @@ GO
 select (p.nombre) as [ Trabajador], COUNT(t.trabajador_id) as [Hijo empleado] from trabajador t
 inner join nino n on t.trabajador_id = n.padre_id
 inner join persona p on t.trabajador_id = p.id
---group by t.trabajador_id 
 group by p.nombre
 
 GO
